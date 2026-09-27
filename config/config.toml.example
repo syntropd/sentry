@@ -13,7 +13,7 @@ watchdog_sec = 15
 max_rss_bytes = 13631488
 
 [provider]
-# Diagnostic provider type: "ollama", "llamacpp", "openai", or "fallback"
+# Diagnostic provider type: "llamacpp", "openai", or "fallback"
 provider_type = "openai"
 
 # Inference endpoint URL

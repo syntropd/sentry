@@ -1,7 +1,6 @@
 //! Factory for instantiating LLM providers from configuration.
 
 use crate::provider::llama_cpp::LlamaCppClient;
-use crate::provider::ollama::OllamaClient;
 use crate::provider::openai::OpenAiClient;
 use crate::provider::LlmProvider;
 use std::time::Duration;
@@ -11,8 +10,6 @@ use serde::{Deserialize, Serialize};
 /// Supported LLM provider types.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub enum ProviderKind {
-    /// Local Ollama daemon.
-    Ollama,
     /// Local or remote llama.cpp server.
     LlamaCpp,
     /// Cloud OpenAI or OpenAI-compatible endpoint.
@@ -56,11 +53,6 @@ impl Default for ProviderConfig {
 /// Constructs a boxed provider matching the given configuration.
 pub fn create_provider(config: &ProviderConfig) -> Box<dyn LlmProvider> {
     match config.kind {
-        ProviderKind::Ollama => {
-            let client = OllamaClient::new(&config.base_url, &config.model, config.timeout)
-                .with_temperature(config.temperature);
-            Box::new(client)
-        }
         ProviderKind::LlamaCpp => {
             let client = LlamaCppClient::new(&config.base_url, &config.model, config.timeout)
                 .with_temperature(config.temperature);

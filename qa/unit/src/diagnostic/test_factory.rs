@@ -4,22 +4,6 @@ use sentry_diagnostic::provider::{create_provider, ProviderConfig, ProviderKind}
 use std::time::Duration;
 
 #[test]
-fn test_create_ollama_provider() {
-    let config = ProviderConfig {
-        kind: ProviderKind::Ollama,
-        base_url: "http://127.0.0.1:11434".to_string(),
-        model: "llama3.2".to_string(),
-        api_key: None,
-        timeout: Duration::from_secs(30),
-        temperature: 0.1,
-        adaptive: Default::default(),
-    };
-
-    let provider = create_provider(&config);
-    assert_eq!(provider.id(), "ollama");
-}
-
-#[test]
 fn test_create_llama_cpp_provider() {
     let config = ProviderConfig {
         kind: ProviderKind::LlamaCpp,

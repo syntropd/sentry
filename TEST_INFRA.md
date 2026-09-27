@@ -13,7 +13,7 @@ systemd-sentry enforces strict opaque-box (black-box) testing principles:
 | R1 | F01-F03 | Pure Rust, Zero-C, <=256 LOC, Single Function | 5 Tests (qa/e2e) | 5 Tests (qa/edge) | Verified | Validated |
 | R2 | F04-F06 | sd_notify, Watchdog Ticker, Socket Activation | 5 Tests (qa/e2e) | 5 Tests (qa/edge) | Verified | Validated |
 | R2 | F07-F12 | D-Bus Listener, Journal Ingest, PSI, Coredump | 5 Tests (qa/e2e) | 5 Tests (qa/edge) | 3 Tests | Validated |
-| R3 | F13-F18 | LLM Providers (Ollama/OpenAI), Schema, Triage | 5 Tests (qa/e2e) | 5 Tests (qa/edge) | 3 Tests | Validated |
+| R3 | F13-F18 | LLM Providers (routerd/OpenAI), Schema, Triage | 5 Tests (qa/e2e) | 5 Tests (qa/edge) | 3 Tests | Validated |
 | R3 | F19-F20 | MCP Protocol (JSON-RPC 2.0, Tools, Resources) | 5 Tests (qa/e2e) | 5 Tests (qa/edge) | 2 Tests | Validated |
 | R4 | F21-F24 | Advisory Gate, Circuit Breaker, Flap Lockout | 5 Tests (qa/e2e) | 5 Tests (qa/edge) | 3 Tests | 3 Tests |
 | R5 | F25-F28 | Desktop Toast, Terminal Wall, Setup Wizard, CLI | 5 Tests (qa/e2e) | 5 Tests (qa/edge) | 2 Tests | Validated |

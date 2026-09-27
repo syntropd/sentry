@@ -23,7 +23,7 @@ pub struct RawLlmResponse {
 pub struct ProviderHealth {
     /// True if provider responded successfully to probe.
     pub available: bool,
-    /// Name of provider ("ollama", "llama.cpp", "openai").
+    /// Name of provider ("llama.cpp", "openai").
     pub provider_name: String,
     /// Currently loaded or targeted model name.
     pub model_name: String,

@@ -11,7 +11,6 @@ pub mod test_journal_patterns;
 pub mod test_json_schema;
 pub mod test_latency_tracker;
 pub mod test_llama_cpp;
-pub mod test_ollama;
 pub mod test_openai;
 pub mod test_pipeline;
 pub mod test_prompt;

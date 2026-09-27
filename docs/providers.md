@@ -17,18 +17,7 @@ model = "fast"
 timeout_secs = 10
 ```
 
-### Provider B: Ollama (Local Edge Inference)
-Ollama runs high-performance models locally without sending server logs off-host.
-```toml
-# /etc/systemd-sentry/config.toml
-[provider]
-provider_type = "ollama"
-endpoint = "http://127.0.0.1:11434"
-model = "llama3:8b"
-timeout_secs = 10
-```
-
-### Provider C: llama.cpp Server
+### Provider B: llama.cpp Server
 Suitable for embedded or resource-constrained nodes running a lightweight `llama-server` binary:
 ```toml
 [provider]
@@ -38,7 +27,7 @@ model = "default"
 timeout_secs = 10
 ```
 
-### Provider D: OpenAI-Compatible APIs (Cloud / vLLM / LiteLLM)
+### Provider C: OpenAI-Compatible APIs (Cloud / vLLM / LiteLLM)
 For high-capacity cloud inference:
 ```toml
 [provider]

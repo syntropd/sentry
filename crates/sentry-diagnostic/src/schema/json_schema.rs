@@ -4,7 +4,7 @@ use serde_json::{json, Value};
 
 /// Generates the strict JSON Schema for `DiagnosticPayload`.
 ///
-/// Compatible with OpenAI Structured Outputs (`strict: true`) and Ollama schema mode.
+/// Compatible with OpenAI Structured Outputs (`strict: true`).
 pub fn diagnostic_payload_json_schema() -> Value {
     json!({
         "type": "object",

@@ -5,7 +5,7 @@ use thiserror::Error;
 /// Diagnostic engine errors.
 #[derive(Debug, Error)]
 pub enum DiagnosticError {
-    /// LLM endpoint (Ollama / OpenAI) unreachable.
+    /// LLM endpoint (llama.cpp / OpenAI) unreachable.
     #[error("Diagnostic provider unreachable: {0}")]
     ProviderUnavailable(String),
 

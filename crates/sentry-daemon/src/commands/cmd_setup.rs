@@ -30,18 +30,7 @@ pub async fn execute_setup() -> i32 {
         }
     }
 
-    // 2. Probe for local Ollama
-    if detected_kind.is_none() {
-        if let Ok(res) = http.get("http://127.0.0.1:11434/api/tags").send().await {
-            if res.status().is_success() {
-                println!("  [+] Detected active local Ollama instance on http://127.0.0.1:11434");
-                detected_kind = Some(ProviderKind::Ollama);
-                detected_endpoint = Some("http://127.0.0.1:11434".to_string());
-            }
-        }
-    }
-
-    // 3. Probe for local llama.cpp
+    // 2. Probe for local llama.cpp
     if detected_kind.is_none() {
         if let Ok(res) = http.get("http://127.0.0.1:8080/health").send().await {
             if res.status().is_success() {
@@ -52,7 +41,7 @@ pub async fn execute_setup() -> i32 {
         }
     }
 
-    // 4. Check for OpenAI API key in environment
+    // 3. Check for OpenAI API key in environment
     let has_openai_key = std::env::var("OPENAI_API_KEY").is_ok();
     if has_openai_key && detected_kind.is_none() {
         println!("  [+] Detected OPENAI_API_KEY environment variable");
@@ -68,14 +57,13 @@ pub async fn execute_setup() -> i32 {
     let kind = detected_kind.unwrap_or(ProviderKind::OpenAi);
     let base_url = detected_endpoint.unwrap_or_else(|| "http://127.0.0.1:32768/v1".to_string());
 
-    // 5. Construct proposed configuration
+    // 4. Construct proposed configuration
     let mut config = DaemonConfig::default();
     config.provider = ProviderConfig {
         kind,
         base_url: base_url.clone(),
         api_key: None,
         model: match kind {
-            ProviderKind::Ollama => "llama3.2:latest".to_string(),
             ProviderKind::LlamaCpp => "default".to_string(),
             ProviderKind::OpenAi => {
                 if base_url.starts_with("https://api.openai.com") {

@@ -81,9 +81,9 @@ state_dir = "/var/lib/systemd-sentry"
 watchdog_interval_sec = 15
 
 [provider]
-kind = "ollama"
-endpoint = "http://127.0.0.1:11434"
-model = "llama3.2:latest"
+kind = "llama_cpp"
+endpoint = "http://127.0.0.1:8080"
+model = "default"
 
 [circuit_breaker]
 failure_window_sec = 60
@@ -91,6 +91,6 @@ max_failures = 3
 "#;
 
     let parsed: toml::Value = toml::from_str(toml_config).unwrap();
-    assert_eq!(parsed["provider"]["kind"].as_str(), Some("ollama"));
+    assert_eq!(parsed["provider"]["kind"].as_str(), Some("llama_cpp"));
     assert_eq!(parsed["circuit_breaker"]["max_failures"].as_integer(), Some(3));
 }

@@ -25,7 +25,7 @@
 | F10 | PSI Pressure Telemetry | Base parser for /proc/pressure/ | HM2 | Base |
 | F11 | systemd-coredump Extraction | Base coredump stack trace extraction | HM1 | Base |
 | F12 | Logind Session Discovery | zbus discovery of active graphical user sessions | HM5 | Base |
-| F13 | Local Ollama Provider | HTTP client for Ollama /api/chat | HM3 | Base |
+| F13 | Local routerd Provider | HTTP client for routerd OpenAI-compatible /v1 | HM3 | Base |
 | F14 | Local llama.cpp Provider | Compatibility with llama.cpp server | HM3 | Base |
 | F15 | Cloud OpenAI Provider | Pure Rust TLS client for OpenAI-compatible endpoints | HM3 | Base |
 | F16 | Strict Diagnostic Payload | Serde schema for triage payloads | HM3 | Base |
@@ -39,7 +39,7 @@
 | F24 | Declarative Policy Engine | Parser & enforcer for /etc/systemd-sentry/policy.toml | HM5 | Base |
 | F25 | Desktop Toast Notifications | Delivery of desktop toast alerts via user session bus | HM5 | Base |
 | F26 | Terminal Wall Alerts | Non-blocking ANSI-sanitized broadcast to /dev/pts/* | HM5 | Base |
-| F27 | Interactive CLI Setup Wizard | `sentry --setup` probing Ollama, live ping validation | HM5 | Base |
+| F27 | Interactive CLI Setup Wizard | `sentry --setup` probing routerd/llama.cpp, live ping validation | HM5 | Base |
 | F28 | Operator CLI Subcommands | Subcommands: status, incidents, inspect, reset, check, triage, monitor, completions | HM5 | Base |
 | F29 | 1:1 Unit QA Test Suite | 1:1 mirroring of production functions into qa/unit/ | HM5 | Base |
 | F30 | Edge-Case Stress Suite | Stress tests for corrupted streams, storms, malformed JSON | HM5 | Base |

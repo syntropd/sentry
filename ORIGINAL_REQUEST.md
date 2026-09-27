@@ -29,7 +29,7 @@ Integrity mode: development
 
 ### R3. Diagnostic Engine & Dual LLM Providers
 - Pluggable provider layer supporting:
-  1. Local inference via Ollama (`/api/generate` or `/api/chat`) and `llama.cpp` server.
+  1. Local inference via the routerd OpenAI-compatible endpoint and `llama.cpp` server.
   2. Cloud OpenAI-compatible endpoints with API key support (`/v1/chat/completions`).
 - Strict JSON schema enforcement for diagnostic payloads (root cause, evidence, severity, proposed remediation).
 - Model Context Protocol (MCP) server implementation allowing external AI tools to query incident logs and unit telemetry.
@@ -42,7 +42,7 @@ Integrity mode: development
 ### R5. User Experience, Notifications & Setup Wizard
 - Desktop toast alerts via `org.freedesktop.Notifications` dispatched to active graphical sessions.
 - Terminal wall alerts for headless sessions.
-- Interactive CLI setup wizard (`systemd-sentry --setup`) that detects local Ollama, prompts for API keys, validates with a live ping, and writes configuration.
+- Interactive CLI setup wizard (`systemd-sentry --setup`) that detects the local routerd endpoint, prompts for API keys, validates with a live ping, and writes configuration.
 - Operator CLI subcommands: `status`, `incidents`, `inspect <id>`, `reset <unit>`.
 
 ### R6. QA, Edge Testing & Fuzzing
@@ -141,7 +141,7 @@ Extract extended attributes (`user.coredump.*`) and bounded ELF crash headers fr
 Ensure graceful, warning-free degradation when `/proc/pressure` (PSI) or `/sys/fs/cgroup` (cgroups v2) are absent, restricted, or unmounted (e.g. Docker, unprivileged LXC, or legacy kernels), providing synthetic fallback metrics so triage continues without failing.
 
 ### R3. Adaptive LLM Inference Timeout & Zero-Latency Fallback
-Implement an adaptive timeout and failure circuit for LLM providers (Ollama, llama.cpp, OpenAI-compatible APIs) that cleanly aborts slow inference calls and transfers execution immediately to `DeterministicFallbackEngine` without blocking the daemon or dropping events.
+Implement an adaptive timeout and failure circuit for LLM providers (llama.cpp, OpenAI-compatible APIs) that cleanly aborts slow inference calls and transfers execution immediately to `DeterministicFallbackEngine` without blocking the daemon or dropping events.
 
 ### R4. Multi-Socket Activation Disambiguation
 Ensure socket activation supports complex environments with multiple listening descriptors by matching socket names from `$LISTEN_FDNAMES` (`sentry`, `systemd-sentry`, `sentry.socket`) or checking socket inode types, without relying on fixed descriptor indices.

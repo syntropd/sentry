@@ -43,7 +43,7 @@
 +------------------------------------+   +------------------------------------------+
 | crates/sentry-diagnostic           |   | crates/sentry-mcp                        |
 |   • Pluggable AI Inference         |   |   • Stdio Model Context Protocol         |
-|     (Ollama, llama.cpp, OpenAI)    |   |   • Bounded Ring Buffer Storage          |
+|     (routerd, llama.cpp, OpenAI)   |   |   • Bounded Ring Buffer Storage          |
 |   • systemd-creds Secret Discovery |   |     (MAX_STORED_INCIDENTS = 100)         |
 |   • Zero-Network Fallback Engine   |   |   • Tools, Prompts, and Resources        |
 |   • Bounded HTTP Reader (<= 512KB) |   +------------------------------------------+

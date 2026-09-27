@@ -36,7 +36,7 @@ Crash Signal (D-Bus)
 Telemetry Slicer (Journal + cgroups v2 + PSI)
        │
        ▼
-Advisory AI Engine (Ollama / llama.cpp / Cloud API)
+Advisory AI Engine (routerd / llama.cpp / Cloud API)
        │  (JSON Diagnosis Only)
        ▼
 Deterministic Policy Engine (policy.toml + Circuit Breaker)
@@ -67,7 +67,7 @@ Run the guided configuration wizard:
 ```bash
 systemd-sentry --setup
 ```
-The wizard auto-detects local Ollama/llama.cpp instances, configures API keys with `systemd-creds` encryption, and tests connection health.
+The wizard auto-detects local routerd/llama.cpp instances, configures API keys with `systemd-creds` encryption, and tests connection health.
 
 ### 3. Start the Supervisor
 ```bash
@@ -88,7 +88,7 @@ watchdog_sec = 15
 max_rss_bytes = 13631488    # 13 MiB limit before load shedding
 
 [provider]
-provider_type = "openai"    # "ollama", "llamacpp", "openai", "fallback"
+provider_type = "openai"    # "llamacpp", "openai", "fallback"
 endpoint = "http://127.0.0.1:32768/v1"
 model = "fast"
 timeout_secs = 10
@@ -131,7 +131,7 @@ auto_remediate = true
 * 🏛️ [System Architecture](docs/architecture.md): Subsystems, dataflow, and zero-trust guarantees.
 * 🛡️ [Hardening & Systemd Integrations](docs/hardening.md): Kernel capabilities, `systemd-creds`, `systemd-oomd`, `systemd-coredump`, `systemd-inhibit`, `systemd-resolved`, `systemd-networkd`, `systemd-timesyncd`, `systemd-pstore`, and `systemd --user`.
 * 📜 [Policy Reference Guide](docs/policy_reference.md): Drop-in `.d/` precedence, circuit state machines, and flap lockout.
-* 🧠 [Diagnostic Providers & Inference](docs/providers.md): Edge Ollama, llama.cpp, OpenAI-compatible APIs, and fallback heuristics.
+* 🧠 [Diagnostic Providers & Inference](docs/providers.md): Edge routerd, llama.cpp, OpenAI-compatible APIs, and fallback heuristics.
 * 🔌 [Model Context Protocol (MCP)](docs/mcp.md): Stdio MCP server setup for Claude Desktop, Cursor, and agent runtimes.
 * 🔌 [Local IPC & API Specification](docs/ipc_api.md): UNIX socket RPC and `SO_PEERCRED` authorization.
 * 🐧 [Unix & Torvalds Design Principles](docs/design_principles.md): Mechanism vs. policy and resource thrift.

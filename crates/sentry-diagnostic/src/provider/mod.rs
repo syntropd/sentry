@@ -3,7 +3,6 @@
 pub mod bounded_body;
 pub mod factory;
 pub mod llama_cpp;
-pub mod ollama;
 pub mod openai;
 
 pub use bounded_body::{
@@ -13,7 +12,6 @@ use crate::schema::{DiagnosticPrompt, ProviderHealth, RawLlmResponse};
 use async_trait::async_trait;
 pub use factory::{create_provider, ProviderConfig, ProviderKind};
 pub use llama_cpp::LlamaCppClient;
-pub use ollama::OllamaClient;
 pub use openai::OpenAiClient;
 use sentry_core::error::DiagnosticError;
 

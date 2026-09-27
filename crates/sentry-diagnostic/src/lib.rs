@@ -1,7 +1,7 @@
 //! Diagnostic Engine for systemd-sentry.
 //!
 //! Provides:
-//! - Dual LLM providers: local Ollama, local llama.cpp, cloud OpenAI-compatible.
+//! - Dual LLM providers: local llama.cpp, cloud OpenAI-compatible.
 //! - Strict JSON schema generation and Serde models for `DiagnosticPayload`.
 //! - Resilient multi-stage JSON sanitization and repair pipeline.
 //! - Deterministic rule-based fallback triage for Linux signals, exit codes, and journal patterns.
@@ -24,7 +24,7 @@ pub use circuit::{
 pub use engine::DiagnosticEngine;
 pub use fallback::DeterministicFallbackEngine;
 pub use provider::{
-    create_provider, LlamaCppClient, LlmProvider, OllamaClient, OpenAiClient, ProviderConfig,
+    create_provider, LlamaCppClient, LlmProvider, OpenAiClient, ProviderConfig,
     ProviderKind,
 };
 pub use sanitize::{DiagnosticSanitizer, SanitizationPipeline};
