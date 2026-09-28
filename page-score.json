@@ -1,6 +1,6 @@
 {
  "repo": "sentry",
- "rev": "327ca99",
+ "rev": "e008d55",
  "dirty": true,
  "pages": [
   {
@@ -20,7 +20,7 @@
   {
    "path": "./crates/sentry-core/src/error/collect/journal_error.rs",
    "lines": 42,
-   "bin_bytes": 1944,
+   "bin_bytes": 1918,
    "heat_pct": null,
    "reach": 4
   },
@@ -29,12 +29,12 @@
    "lines": 13,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-core/src/error/collect/psi_error.rs",
    "lines": 27,
-   "bin_bytes": 1453,
+   "bin_bytes": 1427,
    "heat_pct": null,
    "reach": 4
   },
@@ -55,7 +55,7 @@
   {
    "path": "./crates/sentry-core/src/error/decide/config_error.rs",
    "lines": 29,
-   "bin_bytes": 1364,
+   "bin_bytes": 1338,
    "heat_pct": null,
    "reach": 3
   },
@@ -71,7 +71,7 @@
    "lines": 13,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-core/src/error/decide/safety_error.rs",
@@ -92,7 +92,7 @@
    "lines": 26,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-core/src/lib.rs",
@@ -104,9 +104,9 @@
   {
    "path": "./crates/sentry-core/src/models/event/coredump.rs",
    "lines": 124,
-   "bin_bytes": 1439,
+   "bin_bytes": 399,
    "heat_pct": null,
-   "reach": 28
+   "reach": 27
   },
   {
    "path": "./crates/sentry-core/src/models/event/driver_event.rs",
@@ -127,35 +127,35 @@
    "lines": 9,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-core/src/models/mod.rs",
    "lines": 32,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-core/src/models/telemetry/cgroup.rs",
    "lines": 159,
-   "bin_bytes": 60936,
+   "bin_bytes": 43252,
    "heat_pct": null,
-   "reach": 26
+   "reach": 22
   },
   {
    "path": "./crates/sentry-core/src/models/telemetry/mod.rs",
    "lines": 11,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-core/src/models/telemetry/psi.rs",
    "lines": 137,
-   "bin_bytes": 27715,
+   "bin_bytes": 19224,
    "heat_pct": null,
-   "reach": 20
+   "reach": 5
   },
   {
    "path": "./crates/sentry-core/src/models/telemetry/system_state.rs",
@@ -167,28 +167,28 @@
   {
    "path": "./crates/sentry-core/src/models/verdict/diagnostic.rs",
    "lines": 113,
-   "bin_bytes": 45226,
+   "bin_bytes": 41043,
    "heat_pct": null,
-   "reach": 5
+   "reach": 2
   },
   {
    "path": "./crates/sentry-core/src/models/verdict/mod.rs",
    "lines": 9,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-core/src/models/verdict/remediation.rs",
    "lines": 75,
-   "bin_bytes": 8636,
+   "bin_bytes": 4565,
    "heat_pct": null,
-   "reach": 7
+   "reach": 3
   },
   {
    "path": "./crates/sentry-core/src/models/verdict/severity.rs",
    "lines": 56,
-   "bin_bytes": 3687,
+   "bin_bytes": 3511,
    "heat_pct": null,
    "reach": 3
   },
@@ -211,7 +211,7 @@
    "lines": 17,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 3
+   "reach": 0
   },
   {
    "path": "./crates/sentry-daemon/src/cli/args.rs",
@@ -225,42 +225,42 @@
    "lines": 132,
    "bin_bytes": 834,
    "heat_pct": null,
-   "reach": 3
+   "reach": 2
   },
   {
    "path": "./crates/sentry-daemon/src/cli/exit_codes.rs",
    "lines": 27,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 14
+   "reach": 12
   },
   {
    "path": "./crates/sentry-daemon/src/cli/help.rs",
    "lines": 67,
    "bin_bytes": 692,
    "heat_pct": null,
-   "reach": 4
+   "reach": 2
   },
   {
    "path": "./crates/sentry-daemon/src/cli/mod.rs",
    "lines": 14,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-daemon/src/cli/parser.rs",
    "lines": 174,
    "bin_bytes": 10437,
    "heat_pct": null,
-   "reach": 6
+   "reach": 1
   },
   {
    "path": "./crates/sentry-daemon/src/commands/mod.rs",
    "lines": 26,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-daemon/src/commands/query/cmd_check.rs",
@@ -302,7 +302,7 @@
    "lines": 13,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-daemon/src/commands/serve/cmd_daemon.rs",
@@ -334,17 +334,24 @@
   },
   {
    "path": "./crates/sentry-daemon/src/commands/serve/cmd_triage.rs",
-   "lines": 97,
-   "bin_bytes": 9840,
+   "lines": 100,
+   "bin_bytes": 10535,
    "heat_pct": null,
    "reach": 2
   },
   {
    "path": "./crates/sentry-daemon/src/commands/serve/mod.rs",
-   "lines": 13,
+   "lines": 15,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
+  },
+  {
+   "path": "./crates/sentry-daemon/src/commands/serve/ping_enclave.rs",
+   "lines": 98,
+   "bin_bytes": 12635,
+   "heat_pct": null,
+   "reach": 3
   },
   {
    "path": "./crates/sentry-daemon/src/config/daemon_config.rs",
@@ -365,7 +372,7 @@
    "lines": 9,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-daemon/src/config/validator.rs",
@@ -393,28 +400,28 @@
    "lines": 11,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-daemon/src/daemon/state.rs",
    "lines": 70,
    "bin_bytes": 1553,
    "heat_pct": null,
-   "reach": 18
+   "reach": 5
   },
   {
    "path": "./crates/sentry-daemon/src/daemon/supervisor.rs",
    "lines": 77,
    "bin_bytes": 12771,
    "heat_pct": null,
-   "reach": 3
+   "reach": 2
   },
   {
    "path": "./crates/sentry-daemon/src/ipc/client.rs",
    "lines": 56,
    "bin_bytes": 4523,
    "heat_pct": null,
-   "reach": 11
+   "reach": 7
   },
   {
    "path": "./crates/sentry-daemon/src/ipc/connection_handler.rs",
@@ -428,14 +435,14 @@
    "lines": 58,
    "bin_bytes": 1747,
    "heat_pct": null,
-   "reach": 5
+   "reach": 2
   },
   {
    "path": "./crates/sentry-daemon/src/ipc/mod.rs",
    "lines": 13,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-daemon/src/ipc/peer_cred.rs",
@@ -463,7 +470,7 @@
    "lines": 17,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-daemon/src/system/load_shedder.rs",
@@ -477,7 +484,7 @@
    "lines": 11,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-daemon/src/system/remediation_executor.rs",
@@ -505,14 +512,14 @@
    "lines": 153,
    "bin_bytes": 1202,
    "heat_pct": null,
-   "reach": 4
+   "reach": 1
   },
   {
    "path": "./crates/sentry-diagnostic/src/circuit/config.rs",
    "lines": 86,
    "bin_bytes": 29694,
    "heat_pct": null,
-   "reach": 18
+   "reach": 5
   },
   {
    "path": "./crates/sentry-diagnostic/src/circuit/latency_tracker.rs",
@@ -526,21 +533,21 @@
    "lines": 11,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-diagnostic/src/circuit/state.rs",
    "lines": 56,
    "bin_bytes": 328,
    "heat_pct": null,
-   "reach": 18
+   "reach": 4
   },
   {
    "path": "./crates/sentry-diagnostic/src/engine.rs",
    "lines": 158,
    "bin_bytes": 9906,
    "heat_pct": null,
-   "reach": 10
+   "reach": 9
   },
   {
    "path": "./crates/sentry-diagnostic/src/fallback/deterministic_engine.rs",
@@ -554,7 +561,7 @@
    "lines": 205,
    "bin_bytes": 6197,
    "heat_pct": null,
-   "reach": 14
+   "reach": 2
   },
   {
    "path": "./crates/sentry-diagnostic/src/fallback/journal_patterns.rs",
@@ -568,7 +575,7 @@
    "lines": 9,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-diagnostic/src/lib.rs",
@@ -603,7 +610,7 @@
    "lines": 29,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-diagnostic/src/provider/openai.rs",
@@ -617,14 +624,14 @@
    "lines": 10,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-diagnostic/src/sanitize/pipeline.rs",
    "lines": 61,
    "bin_bytes": 1881,
    "heat_pct": null,
-   "reach": 2
+   "reach": 1
   },
   {
    "path": "./crates/sentry-diagnostic/src/sanitize/repair.rs",
@@ -644,7 +651,7 @@
    "path": "./crates/sentry-diagnostic/src/schema/json_schema.rs",
    "lines": 115,
    "bin_bytes": 41858,
-   "heat_pct": 1.17,
+   "heat_pct": 1.92,
    "reach": 1
   },
   {
@@ -652,19 +659,19 @@
    "lines": 9,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-diagnostic/src/schema/prompt.rs",
    "lines": 102,
    "bin_bytes": 5074,
    "heat_pct": null,
-   "reach": 3
+   "reach": 2
   },
   {
    "path": "./crates/sentry-diagnostic/src/schema/response.rs",
    "lines": 34,
-   "bin_bytes": 18615,
+   "bin_bytes": 200,
    "heat_pct": null,
    "reach": 1
   },
@@ -672,21 +679,21 @@
    "path": "./crates/sentry-diagnostic/tests/adversarial_circuit_breaker.rs",
    "lines": 227,
    "bin_bytes": null,
-   "heat_pct": null,
+   "heat_pct": 0.38,
    "reach": 0
   },
   {
    "path": "./crates/sentry-diagnostic/tests/adversarial_circuit_concurrency.rs",
    "lines": 137,
    "bin_bytes": null,
-   "heat_pct": 0.39,
+   "heat_pct": null,
    "reach": 0
   },
   {
    "path": "./crates/sentry-diagnostic/tests/adversarial_circuit_empirical.rs",
    "lines": 242,
    "bin_bytes": null,
-   "heat_pct": 0.78,
+   "heat_pct": 1.15,
    "reach": 0
   },
   {
@@ -729,7 +736,7 @@
    "lines": 24,
    "bin_bytes": 1134,
    "heat_pct": null,
-   "reach": 75
+   "reach": 5
   },
   {
    "path": "./crates/sentry-driver/src/activation/inspect/fd_flags.rs",
@@ -743,7 +750,7 @@
    "lines": 11,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-driver/src/activation/inspect/socket_inspector.rs",
@@ -753,18 +760,18 @@
    "reach": 7
   },
   {
-   "path": "./crates/sentry-driver/src/activation/listen/mod.rs",
-   "lines": 11,
-   "bin_bytes": null,
-   "heat_pct": null,
-   "reach": 1
-  },
-  {
    "path": "./crates/sentry-driver/src/activation/listen/model.rs",
    "lines": 70,
    "bin_bytes": 1006,
    "heat_pct": null,
-   "reach": 13
+   "reach": 4
+  },
+  {
+   "path": "./crates/sentry-driver/src/activation/listen/mod.rs",
+   "lines": 11,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 0
   },
   {
    "path": "./crates/sentry-driver/src/activation/listen/name_parser.rs",
@@ -778,7 +785,7 @@
    "lines": 60,
    "bin_bytes": 2502,
    "heat_pct": null,
-   "reach": 6
+   "reach": 3
   },
   {
    "path": "./crates/sentry-driver/src/activation/listen/pid_validator.rs",
@@ -792,7 +799,7 @@
    "lines": 22,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-driver/src/cgroup/cgroup_collector.rs",
@@ -841,7 +848,7 @@
    "lines": 19,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-driver/src/cgroup/proc_statm_extractor.rs",
@@ -883,14 +890,14 @@
    "lines": 11,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-driver/src/coredump/mod.rs",
    "lines": 26,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-driver/src/coredump/scan/dir_scanner.rs",
@@ -911,14 +918,14 @@
    "lines": 12,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-driver/src/coredump/scan/stream_reader.rs",
    "lines": 97,
    "bin_bytes": 5963,
    "heat_pct": null,
-   "reach": 9
+   "reach": 8
   },
   {
    "path": "./crates/sentry-driver/src/coredump/scan/xattr_reader.rs",
@@ -932,21 +939,21 @@
    "lines": 27,
    "bin_bytes": 1472,
    "heat_pct": null,
-   "reach": 75
+   "reach": 6
   },
   {
    "path": "./crates/sentry-driver/src/dbus/bus/event.rs",
    "lines": 86,
-   "bin_bytes": 1923,
+   "bin_bytes": 610,
    "heat_pct": null,
-   "reach": 6
+   "reach": 5
   },
   {
    "path": "./crates/sentry-driver/src/dbus/bus/listener.rs",
    "lines": 155,
    "bin_bytes": 17769,
    "heat_pct": null,
-   "reach": 5
+   "reach": 2
   },
   {
    "path": "./crates/sentry-driver/src/dbus/bus/manager_client.rs",
@@ -960,7 +967,7 @@
    "lines": 12,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-driver/src/dbus/codec/match_rules.rs",
@@ -974,7 +981,7 @@
    "lines": 11,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-driver/src/dbus/codec/path_escape.rs",
@@ -1002,28 +1009,28 @@
    "lines": 24,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-driver/src/inhibit/listener.rs",
    "lines": 113,
    "bin_bytes": 1048,
    "heat_pct": null,
-   "reach": 5
+   "reach": 1
   },
   {
    "path": "./crates/sentry-driver/src/inhibit/lock.rs",
    "lines": 79,
-   "bin_bytes": 2974,
+   "bin_bytes": 664,
    "heat_pct": null,
-   "reach": 2
+   "reach": 1
   },
   {
    "path": "./crates/sentry-driver/src/inhibit/mod.rs",
    "lines": 7,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-driver/src/journal/binary_field_reader.rs",
@@ -1037,7 +1044,7 @@
    "lines": 79,
    "bin_bytes": 988,
    "heat_pct": null,
-   "reach": 5
+   "reach": 4
   },
   {
    "path": "./crates/sentry-driver/src/journal/export_parser.rs",
@@ -1051,7 +1058,7 @@
    "lines": 13,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-driver/src/journal/resync.rs",
@@ -1065,7 +1072,7 @@
    "lines": 60,
    "bin_bytes": 6761,
    "heat_pct": null,
-   "reach": 9
+   "reach": 1
   },
   {
    "path": "./crates/sentry-driver/src/lib.rs",
@@ -1086,21 +1093,21 @@
    "lines": 24,
    "bin_bytes": 1015,
    "heat_pct": null,
-   "reach": 75
-  },
-  {
-   "path": "./crates/sentry-driver/src/logind/mod.rs",
-   "lines": 15,
-   "bin_bytes": null,
-   "heat_pct": null,
-   "reach": 1
+   "reach": 5
   },
   {
    "path": "./crates/sentry-driver/src/logind/model.rs",
    "lines": 44,
    "bin_bytes": 263,
    "heat_pct": null,
-   "reach": 13
+   "reach": 3
+  },
+  {
+   "path": "./crates/sentry-driver/src/logind/mod.rs",
+   "lines": 15,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 0
   },
   {
    "path": "./crates/sentry-driver/src/logind/session_filter.rs",
@@ -1128,19 +1135,19 @@
    "lines": 63,
    "bin_bytes": 755,
    "heat_pct": null,
-   "reach": 11
+   "reach": 1
   },
   {
    "path": "./crates/sentry-driver/src/networkd/mod.rs",
    "lines": 5,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-driver/src/notify/encoder.rs",
    "lines": 16,
-   "bin_bytes": 5060,
+   "bin_bytes": 581,
    "heat_pct": null,
    "reach": 2
   },
@@ -1149,14 +1156,14 @@
    "lines": 28,
    "bin_bytes": 1347,
    "heat_pct": null,
-   "reach": 75
+   "reach": 4
   },
   {
    "path": "./crates/sentry-driver/src/notify/mod.rs",
    "lines": 19,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-driver/src/notify/sender.rs",
@@ -1168,7 +1175,7 @@
   {
    "path": "./crates/sentry-driver/src/notify/socket_addr.rs",
    "lines": 34,
-   "bin_bytes": 2727,
+   "bin_bytes": 1268,
    "heat_pct": null,
    "reach": 3
   },
@@ -1177,7 +1184,7 @@
    "lines": 47,
    "bin_bytes": 1262,
    "heat_pct": null,
-   "reach": 18
+   "reach": 3
   },
   {
    "path": "./crates/sentry-driver/src/notify/watchdog_config.rs",
@@ -1198,7 +1205,7 @@
    "lines": 15,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-driver/src/psi/proc_loadavg_reader.rs",
@@ -1247,7 +1254,7 @@
    "lines": 6,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-driver/src/pstore/scanner.rs",
@@ -1261,28 +1268,28 @@
    "lines": 74,
    "bin_bytes": 773,
    "heat_pct": null,
-   "reach": 11
+   "reach": 1
   },
   {
    "path": "./crates/sentry-driver/src/resolved/mod.rs",
    "lines": 5,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-driver/src/timesync/client.rs",
    "lines": 64,
    "bin_bytes": 655,
    "heat_pct": null,
-   "reach": 11
+   "reach": 1
   },
   {
    "path": "./crates/sentry-driver/src/timesync/mod.rs",
    "lines": 5,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-driver/src/user_session/manager.rs",
@@ -1296,7 +1303,7 @@
    "lines": 5,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-driver/tests/activation/adversarial_activation_notify_test.rs",
@@ -1337,7 +1344,7 @@
    "path": "./crates/sentry-driver/tests/capture/adversarial_coredump_compressed_frame_test.rs",
    "lines": 158,
    "bin_bytes": null,
-   "heat_pct": 0.39,
+   "heat_pct": 0.77,
    "reach": 0
   },
   {
@@ -1414,7 +1421,7 @@
    "path": "./crates/sentry-driver/tests/signal/adversarial_remediation_benchmark.rs",
    "lines": 242,
    "bin_bytes": null,
-   "heat_pct": 0.39,
+   "heat_pct": 0.77,
    "reach": 0
   },
   {
@@ -1443,14 +1450,14 @@
    "lines": 7,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-mcp/src/prompts/registry.rs",
    "lines": 31,
    "bin_bytes": 6529,
    "heat_pct": null,
-   "reach": 4
+   "reach": 1
   },
   {
    "path": "./crates/sentry-mcp/src/protocol/error_codes.rs",
@@ -1462,7 +1469,7 @@
   {
    "path": "./crates/sentry-mcp/src/protocol/handshake.rs",
    "lines": 37,
-   "bin_bytes": 117614,
+   "bin_bytes": 3954,
    "heat_pct": null,
    "reach": 2
   },
@@ -1471,12 +1478,12 @@
    "lines": 9,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-mcp/src/protocol/types.rs",
    "lines": 94,
-   "bin_bytes": 38151,
+   "bin_bytes": 12945,
    "heat_pct": null,
    "reach": 6
   },
@@ -1485,12 +1492,12 @@
    "lines": 7,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-mcp/src/resources/reader.rs",
    "lines": 82,
-   "bin_bytes": 27834,
+   "bin_bytes": 13153,
    "heat_pct": null,
    "reach": 2
   },
@@ -1499,12 +1506,12 @@
    "lines": 33,
    "bin_bytes": 8978,
    "heat_pct": null,
-   "reach": 4
+   "reach": 1
   },
   {
    "path": "./crates/sentry-mcp/src/server/dispatcher.rs",
    "lines": 115,
-   "bin_bytes": 18991,
+   "bin_bytes": 9381,
    "heat_pct": null,
    "reach": 2
   },
@@ -1513,12 +1520,12 @@
    "lines": 7,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-mcp/src/server/stdio.rs",
    "lines": 118,
-   "bin_bytes": 8677,
+   "bin_bytes": 8669,
    "heat_pct": null,
    "reach": 1
   },
@@ -1534,7 +1541,7 @@
    "lines": 5,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-mcp/src/tools/explain_incident.rs",
@@ -1569,20 +1576,20 @@
    "lines": 33,
    "bin_bytes": 2625,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-mcp/src/tools/registry.rs",
    "lines": 83,
    "bin_bytes": 26735,
    "heat_pct": null,
-   "reach": 4
+   "reach": 1
   },
   {
    "path": "./crates/sentry-mcp/tests/flooding_stress.rs",
    "lines": 144,
    "bin_bytes": null,
-   "heat_pct": 0.78,
+   "heat_pct": 1.15,
    "reach": 0
   },
   {
@@ -1611,28 +1618,28 @@
    "lines": 65,
    "bin_bytes": 811,
    "heat_pct": null,
-   "reach": 18
+   "reach": 5
   },
   {
    "path": "./crates/sentry-safety/src/circuit/mod.rs",
    "lines": 11,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./crates/sentry-safety/src/circuit/registry.rs",
    "lines": 135,
    "bin_bytes": 2323,
    "heat_pct": null,
-   "reach": 4
+   "reach": 1
   },
   {
    "path": "./crates/sentry-safety/src/circuit/state.rs",
    "lines": 62,
    "bin_bytes": 2258,
    "heat_pct": null,
-   "reach": 18
+   "reach": 4
   },
   {
    "path": "./crates/sentry-safety/src/circuit/unit_breaker.rs",
@@ -1677,18 +1684,18 @@
    "reach": 1
   },
   {
-   "path": "./crates/sentry-safety/src/policy/mod.rs",
-   "lines": 13,
-   "bin_bytes": null,
-   "heat_pct": null,
-   "reach": 1
-  },
-  {
    "path": "./crates/sentry-safety/src/policy/model.rs",
    "lines": 61,
    "bin_bytes": 38189,
    "heat_pct": null,
-   "reach": 13
+   "reach": 5
+  },
+  {
+   "path": "./crates/sentry-safety/src/policy/mod.rs",
+   "lines": 13,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 0
   },
   {
    "path": "./crates/sentry-safety/tests/adversarial_clock_skew.rs",
@@ -1743,7 +1750,7 @@
    "path": "./crates/sentry-safety/tests/adversarial_registry_flood.rs",
    "lines": 158,
    "bin_bytes": null,
-   "heat_pct": 0.78,
+   "heat_pct": 1.15,
    "reach": 0
   },
   {
@@ -1982,21 +1989,21 @@
    "lines": 47,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/fixtures/oom_service/main.rs",
    "lines": 58,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/fixtures/segfault_service/main.rs",
    "lines": 40,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/fuzz/fuzz_targets/fuzz_dbus_decoder.rs",
@@ -2029,7 +2036,7 @@
   {
    "path": "./qa/fuzz/src/dbus.rs",
    "lines": 79,
-   "bin_bytes": 11517,
+   "bin_bytes": null,
    "heat_pct": null,
    "reach": 18
   },
@@ -2038,7 +2045,7 @@
    "lines": 105,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 16
+   "reach": 11
   },
   {
    "path": "./qa/fuzz/src/lib.rs",
@@ -2052,7 +2059,7 @@
    "lines": 102,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 20
+   "reach": 1
   },
   {
    "path": "./qa/fuzz/src/triage.rs",
@@ -2066,14 +2073,14 @@
    "lines": 19,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/activation/parse/mod.rs",
    "lines": 6,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/activation/parse/test_activation_parser.rs",
@@ -2094,7 +2101,7 @@
    "lines": 7,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/activation/socket/test_fd_flags.rs",
@@ -2122,7 +2129,7 @@
    "lines": 7,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/activation/verify/test_disambiguation.rs",
@@ -2150,7 +2157,7 @@
    "lines": 9,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/cgroup/test_cgroup_collector.rs",
@@ -2206,7 +2213,7 @@
    "lines": 6,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/coredump/elf/test_adversarial_elf.rs",
@@ -2241,14 +2248,14 @@
    "lines": 5,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/coredump/scan/mod.rs",
    "lines": 5,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/coredump/scan/test_dir_scanner.rs",
@@ -2276,7 +2283,7 @@
    "lines": 5,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/coredump/stream/test_adversarial_stream.rs",
@@ -2301,10 +2308,10 @@
   },
   {
    "path": "./qa/unit/src/daemon/mod.rs",
-   "lines": 9,
+   "lines": 10,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/daemon/test_cli_parser.rs",
@@ -2356,11 +2363,25 @@
    "reach": 0
   },
   {
+   "path": "./qa/unit/src/daemon/triage/enclave_tests.rs",
+   "lines": 87,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 0
+  },
+  {
+   "path": "./qa/unit/src/daemon/triage/mod.rs",
+   "lines": 3,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 0
+  },
+  {
    "path": "./qa/unit/src/dbus/mod.rs",
    "lines": 6,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/dbus/test_match_rules.rs",
@@ -2395,7 +2416,7 @@
    "lines": 6,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/diagnostic/engine/test_adaptive_engine.rs",
@@ -2430,14 +2451,14 @@
    "lines": 6,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/diagnostic/provider/mod.rs",
    "lines": 6,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/diagnostic/provider/test_bounded_body.rs",
@@ -2472,7 +2493,7 @@
    "lines": 6,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/diagnostic/sanitize/test_bracket_slicing.rs",
@@ -2507,7 +2528,7 @@
    "lines": 7,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/diagnostic/schema/test_exit_codes.rs",
@@ -2549,7 +2570,7 @@
    "lines": 3,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/inhibit/test_inhibit.rs",
@@ -2563,7 +2584,7 @@
    "lines": 7,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/journal/test_binary_field_reader.rs",
@@ -2604,7 +2625,7 @@
    "path": "./qa/unit/src/lib.rs",
    "lines": 38,
    "bin_bytes": null,
-   "heat_pct": 0.78,
+   "heat_pct": null,
    "reach": 0
   },
   {
@@ -2612,14 +2633,14 @@
    "lines": 4,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/logind/test_model.rs",
    "lines": 29,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/logind/test_user_bus.rs",
@@ -2633,14 +2654,14 @@
    "lines": 6,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/mcp/prompts/mod.rs",
    "lines": 3,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/mcp/prompts/test_prompt_generator.rs",
@@ -2654,7 +2675,7 @@
    "lines": 4,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/mcp/resources/test_resource_reader.rs",
@@ -2675,7 +2696,7 @@
    "lines": 7,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/mcp/tools/test_tool_explain.rs",
@@ -2699,15 +2720,15 @@
    "reach": 0
   },
   {
-   "path": "./qa/unit/src/mcp/tools/test_tool_telemetry.rs",
-   "lines": 28,
+   "path": "./qa/unit/src/mcp/tools/test_tools_registry.rs",
+   "lines": 30,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
   },
   {
-   "path": "./qa/unit/src/mcp/tools/test_tools_registry.rs",
-   "lines": 30,
+   "path": "./qa/unit/src/mcp/tools/test_tool_telemetry.rs",
+   "lines": 28,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
@@ -2717,7 +2738,7 @@
    "lines": 6,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/mcp/transport/test_dispatcher.rs",
@@ -2752,7 +2773,7 @@
    "lines": 3,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/networkd/test_networkd.rs",
@@ -2766,7 +2787,7 @@
    "lines": 8,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/notify/test_encoder.rs",
@@ -2815,7 +2836,7 @@
    "lines": 8,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/psi/test_proc_loadavg_reader.rs",
@@ -2854,7 +2875,7 @@
   },
   {
    "path": "./qa/unit/src/psi/test_psi_resilient.rs",
-   "lines": 112,
+   "lines": 113,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
@@ -2864,7 +2885,7 @@
    "lines": 3,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/pstore/test_pstore.rs",
@@ -2878,7 +2899,7 @@
    "lines": 3,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/resolved/test_resolved.rs",
@@ -2892,7 +2913,7 @@
    "lines": 6,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/safety/circuit/test_circuit_config.rs",
@@ -2927,14 +2948,14 @@
    "lines": 4,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/safety/policy/mod.rs",
    "lines": 6,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/safety/policy/test_policy_dropin_merger.rs",
@@ -2969,7 +2990,7 @@
    "lines": 3,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/timesync/test_timesync.rs",
@@ -2983,7 +3004,7 @@
    "lines": 3,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 1
+   "reach": 0
   },
   {
    "path": "./qa/unit/src/user_session/test_user_session.rs",
@@ -2993,5 +3014,5 @@
    "reach": 0
   }
  ],
- "notes": "bin_bytes from newest dev rlib per crate via nm (inlining approx, bins re-link the same code); heat from 257 attributed samples over 22/99 binaries at 10Hz incl. one child level; every repo-resolving frame counts;"
+ "notes": "reach counts referencing files (shared file names qualified by ancestor dir); bin_bytes from newest workspace dev rlib per crate via nm (inlining approx, bins re-link the same code; shims excluded, foreign paths never attributed); heat from 260 attributed samples over 24/118 binaries at 10Hz incl. one child level; every repo-resolving frame counts;"
 }
