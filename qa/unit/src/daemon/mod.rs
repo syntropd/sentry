@@ -7,3 +7,4 @@ pub mod test_entrypoint;
 pub mod test_ipc_protocol;
 pub mod test_statm_and_load_shedder;
 pub mod test_system_integrations;
+pub mod triage;

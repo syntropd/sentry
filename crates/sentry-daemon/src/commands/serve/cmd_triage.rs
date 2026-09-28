@@ -71,6 +71,9 @@ pub async fn execute_triage(unit: &str, json: bool, config: &DaemonConfig) -> i3
     incident.telemetry = pressure;
     incident.coredump = coredump;
 
+    // Isolate emergency compute before the heavy diagnostic work.
+    super::ping_enclave::ping_triage_enclave(&incident.incident_id.to_string(), &incident.unit).await;
+
     let provider: std::sync::Arc<dyn sentry_diagnostic::LlmProvider> = std::sync::Arc::from(
         sentry_diagnostic::provider::create_provider(&config.provider),
     );
