@@ -46,8 +46,9 @@ fn test_collect_system_psi_resilient_fallback_to_loadavg_and_meminfo() {
     let pressure_dir = dir.path().join("pressure");
     fs::create_dir_all(&pressure_dir).unwrap();
 
-    // Mock loadavg and meminfo in parent of pressure directory
-    fs::write(dir.path().join("loadavg"), "10.00 8.00 6.00 5/500 1234\n").unwrap();
+    // Mock loadavg and meminfo in parent of pressure directory.
+    // Load dwarfs any real core count so the stall is always non-zero.
+    fs::write(dir.path().join("loadavg"), "9999.00 8.00 6.00 5/500 1234\n").unwrap();
     fs::write(
         dir.path().join("meminfo"),
         "MemTotal:       1000000 kB\nMemAvailable:     50000 kB\n",
@@ -56,7 +57,7 @@ fn test_collect_system_psi_resilient_fallback_to_loadavg_and_meminfo() {
 
     let telemetry = collect_system_psi_resilient(&pressure_dir);
     assert!(telemetry.is_synthetic());
-    // Since load 10.00 > online cores, CPU stall is non-zero
+    // Since load 9999.00 > online cores, CPU stall is non-zero
     assert!(telemetry.cpu.some.avg10 > 0.0);
     // Since available memory is 5% (<10%), memory stall is non-zero
     assert!(telemetry.memory.some.avg10 > 0.0);
