@@ -1,4 +1,4 @@
-//! Markdown code fence stripping for LLM output.
+//! Stage-1 raw-output preparation: markdown fence stripping and JSON slicing.
 
 /// Strips markdown code fences (```json or ```) and surrounding whitespace.
 pub fn strip_markdown_fences(input: &str) -> &str {
@@ -22,5 +22,19 @@ pub fn strip_markdown_fences(input: &str) -> &str {
         content[..end_pos].trim()
     } else {
         content.trim()
+    }
+}
+
+/// Slices the outermost JSON object between the first `{` and last `}`.
+///
+/// Returns `None` if no matching pair of braces exists.
+pub fn slice_outermost_json(input: &str) -> Option<&str> {
+    let first = input.find('{')?;
+    let last = input.rfind('}')?;
+
+    if first <= last {
+        Some(&input[first..=last])
+    } else {
+        None
     }
 }

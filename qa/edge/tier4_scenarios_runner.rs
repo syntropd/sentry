@@ -7,8 +7,13 @@
 //! - Segfault coredump extraction
 //! - Cascading failure load shedding
 
+#[path = "scenarios/failure_storm.rs"]
 mod failure_storm;
+#[path = "scenarios/oom_simulation.rs"]
 mod oom_simulation;
+#[path = "scenarios/flap_lockout.rs"]
 mod flap_lockout;
+#[path = "scenarios/segfault_coredump.rs"]
 mod segfault_coredump;
+#[path = "scenarios/cascading_load_shed.rs"]
 mod cascading_load_shed;

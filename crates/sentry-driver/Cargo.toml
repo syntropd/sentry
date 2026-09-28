@@ -7,6 +7,7 @@ license.workspace = true
 authors.workspace = true
 repository.workspace = true
 description = "Pure Rust systemd drivers and host subsystem integrations for systemd-sentry"
+autotests = false
 
 [lib]
 name = "sentry_driver"
@@ -30,3 +31,75 @@ ruzstd.workspace = true
 [dev-dependencies]
 tempfile.workspace = true
 tokio = { workspace = true, features = ["test-util"] }
+
+[[test]]
+name = "adversarial_activation_notify_test"
+path = "tests/activation/adversarial_activation_notify_test.rs"
+
+[[test]]
+name = "adversarial_c1_hm4_disambiguation_bench"
+path = "tests/activation/adversarial_c1_hm4_disambiguation_bench.rs"
+
+[[test]]
+name = "adversarial_c1_hm4_disambiguation_stress"
+path = "tests/activation/adversarial_c1_hm4_disambiguation_stress.rs"
+
+[[test]]
+name = "adversarial_hm4_socket_disambiguation"
+path = "tests/activation/adversarial_hm4_socket_disambiguation.rs"
+
+[[test]]
+name = "socket_activation_adversarial"
+path = "tests/activation/socket_activation_adversarial.rs"
+
+[[test]]
+name = "adversarial_c1_container_fallback_test"
+path = "tests/container/adversarial_c1_container_fallback_test.rs"
+
+[[test]]
+name = "adversarial_container_fallback_test"
+path = "tests/container/adversarial_container_fallback_test.rs"
+
+[[test]]
+name = "adversarial_hm2_container_resilience"
+path = "tests/container/adversarial_hm2_container_resilience.rs"
+
+[[test]]
+name = "adversarial_coredump_compressed_frame_test"
+path = "tests/capture/adversarial_coredump_compressed_frame_test.rs"
+
+[[test]]
+name = "adversarial_coredump_stream_test"
+path = "tests/capture/adversarial_coredump_stream_test.rs"
+
+[[test]]
+name = "adversarial_dbus_coredump_test"
+path = "tests/capture/adversarial_dbus_coredump_test.rs"
+
+[[test]]
+name = "adversarial_journal_test"
+path = "tests/capture/adversarial_journal_test.rs"
+
+[[test]]
+name = "adversarial_psi_cgroup_test"
+path = "tests/capture/adversarial_psi_cgroup_test.rs"
+
+[[test]]
+name = "dbus_escape_adversarial"
+path = "tests/capture/dbus_escape_adversarial.rs"
+
+[[test]]
+name = "adversarial_c1_rem2_benchmark"
+path = "tests/signal/adversarial_c1_rem2_benchmark.rs"
+
+[[test]]
+name = "adversarial_challenger_edge_cases"
+path = "tests/signal/adversarial_challenger_edge_cases.rs"
+
+[[test]]
+name = "adversarial_remediation_benchmark"
+path = "tests/signal/adversarial_remediation_benchmark.rs"
+
+[[test]]
+name = "sd_notify_adversarial"
+path = "tests/signal/sd_notify_adversarial.rs"

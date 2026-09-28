@@ -1,6 +1,6 @@
 //! 1:1 Unit QA tests for watchdog heartbeat ticker task.
 
-use super::NOTIFY_ENV_LOCK;
+use super::test_watchdog_config::NOTIFY_ENV_LOCK;
 use sentry_driver::notify::{WatchdogConfig, WatchdogTicker};
 use std::env;
 use std::time::Duration;

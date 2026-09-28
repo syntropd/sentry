@@ -1,4 +1,11 @@
 //! Main executable entrypoint for `systemd-sentry`.
+//!
+//! Thin binary root over [`sentry_daemon::entrypoint`]: collects the process
+//! arguments, runs the async supervisor/CLI dispatch, and exits with the
+//! resulting sysexits status code. All behavior lives in the library so the
+//! same dispatch is reusable from tests and the `sentry` alias binary.
+//!
+//! Exit codes follow `<sysexits.h>` via [`sentry_daemon::cli`].
 
 use sentry_daemon::entrypoint;
 

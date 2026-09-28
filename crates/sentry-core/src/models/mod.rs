@@ -1,28 +1,32 @@
 //! Domain models module re-exports.
 
-pub mod cgroup;
-pub mod coredump;
-pub mod diagnostic;
-pub mod driver_event;
-pub mod incident_context;
-pub mod psi;
-pub mod remediation;
-pub mod severity;
-pub mod system_state;
+pub mod event;
+pub mod telemetry;
+pub mod verdict;
 
-pub use cgroup::{
+pub use event::coredump;
+pub use event::driver_event;
+pub use event::incident_context;
+pub use telemetry::cgroup;
+pub use telemetry::psi;
+pub use telemetry::system_state;
+pub use verdict::diagnostic;
+pub use verdict::remediation;
+pub use verdict::severity;
+
+pub use event::coredump::{CoredumpRecord, CoredumpXattrs};
+pub use event::driver_event::{DriverEvent, JournalEntryDetails, UnitFailedDetails};
+pub use event::incident_context::IncidentContext;
+pub use telemetry::cgroup::{
     CgroupCpuStats, CgroupIoDeviceStats, CgroupMemoryStats, CgroupTelemetry, CpuStat,
     IoDeviceMetrics, MemoryEvents,
 };
-pub use coredump::{CoredumpRecord, CoredumpXattrs};
-pub use diagnostic::{
-    DiagnosticPayload, Evidence, ProposedRemediation, RiskLevel, RootCause,
-};
-pub use driver_event::{DriverEvent, JournalEntryDetails, UnitFailedDetails};
-pub use incident_context::IncidentContext;
-pub use psi::{PressureTelemetry, PsiLine, PsiRecord};
-pub use remediation::RemediationAction;
-pub use severity::Severity;
-pub use system_state::{
+pub use telemetry::psi::{PressureTelemetry, PsiLine, PsiRecord};
+pub use telemetry::system_state::{
     DnsHealthState, NetworkOperationalState, PstorePanicReport, ShutdownState, TimeSyncStatus,
 };
+pub use verdict::diagnostic::{
+    DiagnosticPayload, Evidence, ProposedRemediation, RiskLevel, RootCause,
+};
+pub use verdict::remediation::RemediationAction;
+pub use verdict::severity::Severity;

@@ -1,6 +1,6 @@
 //! Resilient JSON sanitization and deserialization pipeline.
 
-use crate::sanitize::bracket_slicing::slice_outermost_json;
+use crate::sanitize::strip_markdown::slice_outermost_json;
 use crate::sanitize::repair::repair_json;
 use crate::sanitize::strip_markdown::strip_markdown_fences;
 use sentry_core::error::DiagnosticError;

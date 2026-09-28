@@ -1,6 +1,6 @@
 //! 1:1 Unit QA tests for notify socket transmission.
 
-use super::NOTIFY_ENV_LOCK;
+use super::test_watchdog_config::NOTIFY_ENV_LOCK;
 use sentry_driver::notify::{
     notify_ready, notify_reloading, notify_status, notify_stopping, notify_watchdog, send_notify,
     NotifyState,

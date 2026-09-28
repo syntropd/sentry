@@ -1,10 +1,13 @@
 //! 1:1 Unit QA tests for watchdog configuration parsing.
 
-use super::NOTIFY_ENV_LOCK;
 use sentry_driver::notify::parse_watchdog_config;
 use std::env;
 use std::process;
+use std::sync::Mutex;
 use std::time::Duration;
+
+/// Process-wide lock to serialize tests that mutate notification environment variables.
+pub static NOTIFY_ENV_LOCK: Mutex<()> = Mutex::new(());
 
 #[test]
 fn test_parse_watchdog_config_valid() {

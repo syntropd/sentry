@@ -5,13 +5,15 @@ use std::sync::Mutex;
 /// Process-wide lock to serialize tests that mutate socket activation environment variables.
 pub static ACTIVATION_ENV_LOCK: Mutex<()> = Mutex::new(());
 
-pub mod test_activation_parser;
-pub mod test_disambiguation;
-pub mod test_fd_flags;
-pub mod test_listener_integration;
-pub mod test_model;
-pub mod test_name_parser;
-pub mod test_pid_validator;
-pub mod test_socket_inspector;
+pub mod parse;
+pub mod socket;
+pub mod verify;
 
-
+pub use parse::test_activation_parser;
+pub use parse::test_name_parser;
+pub use socket::test_fd_flags;
+pub use socket::test_listener_integration;
+pub use socket::test_socket_inspector;
+pub use verify::test_disambiguation;
+pub use verify::test_model;
+pub use verify::test_pid_validator;

@@ -1,4 +1,12 @@
 #![no_main]
+//! Fuzz target: PSI pressure-record parser.
+//!
+//! Feeds arbitrary UTF-8 fuzzer bytes into `parse_psi_record`: metric
+//! parsing must never panic or mis-slice on malformed `/proc/pressure`
+//! text. A crash here is a robustness bug in the reference parser,
+//! never in the fuzzer input.
+//!
+//! Corpus: pressure-stall text lines, seeded from real `/proc` samples.
 
 use libfuzzer_sys::fuzz_target;
 use sentry_fuzz::parse_psi_record;
