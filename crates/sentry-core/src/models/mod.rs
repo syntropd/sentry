@@ -30,3 +30,6 @@ pub use verdict::diagnostic::{
 };
 pub use verdict::remediation::RemediationAction;
 pub use verdict::severity::Severity;
+pub use verdict::gang_triage::{
+    triage_gang_crash, GangCrashContext, GangErrorCategory, GangTriageVerdict,
+};
