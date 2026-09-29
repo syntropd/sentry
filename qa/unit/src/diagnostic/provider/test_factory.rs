@@ -46,3 +46,27 @@ fn test_default_provider_config() {
     assert_eq!(provider.id(), "openai");
 }
 
+#[test]
+fn test_provider_kind_serde_aliases() {
+    let parse = |s: &str| serde_json::from_str::<ProviderKind>(s).expect("valid enum string");
+    assert_eq!(parse(r#""Ollama""#), ProviderKind::OpenAi);
+    assert_eq!(parse(r#""ollama""#), ProviderKind::OpenAi);
+    assert_eq!(parse(r#""openai""#), ProviderKind::OpenAi);
+    assert_eq!(parse(r#""llama_cpp""#), ProviderKind::LlamaCpp);
+    assert_eq!(parse(r#""llamacpp""#), ProviderKind::LlamaCpp);
+    assert_eq!(parse(r#""Llama_Cpp""#), ProviderKind::LlamaCpp);
+}
+
+#[test]
+fn test_provider_kind_toml_aliases() {
+    #[derive(serde::Deserialize)]
+    struct Wrapper {
+        kind: ProviderKind,
+    }
+    let parse_toml = |s: &str| toml::from_str::<Wrapper>(s).expect("valid toml").kind;
+    assert_eq!(parse_toml("kind = \"Ollama\""), ProviderKind::OpenAi);
+    assert_eq!(parse_toml("kind = \"ollama\""), ProviderKind::OpenAi);
+    assert_eq!(parse_toml("kind = \"llama_cpp\""), ProviderKind::LlamaCpp);
+    assert_eq!(parse_toml("kind = \"openai\""), ProviderKind::OpenAi);
+}
+

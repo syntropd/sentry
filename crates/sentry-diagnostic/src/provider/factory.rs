@@ -11,8 +11,16 @@ use serde::{Deserialize, Serialize};
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub enum ProviderKind {
     /// Local or remote llama.cpp server.
+    #[serde(alias = "llama_cpp", alias = "llamacpp", alias = "Llama_Cpp")]
     LlamaCpp,
     /// Cloud OpenAI or OpenAI-compatible endpoint.
+    #[serde(
+        alias = "openai",
+        alias = "OpenAI",
+        alias = "open_ai",
+        alias = "Ollama",
+        alias = "ollama"
+    )]
     OpenAi,
 }
 
