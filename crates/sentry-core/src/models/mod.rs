@@ -1,5 +1,6 @@
 //! Domain models module re-exports.
 
+pub mod agent;
 pub mod event;
 pub mod telemetry;
 pub mod verdict;
@@ -14,6 +15,7 @@ pub use verdict::diagnostic;
 pub use verdict::remediation;
 pub use verdict::severity;
 
+pub use agent::{AgentAction, AgentPlan, AgentVerdict, StepRecord};
 pub use event::coredump::{CoredumpRecord, CoredumpXattrs};
 pub use event::driver_event::{DriverEvent, JournalEntryDetails, UnitFailedDetails};
 pub use event::incident_context::IncidentContext;

@@ -11,6 +11,7 @@
 #![forbid(unsafe_code)]
 #![deny(missing_docs)]
 
+pub mod agent;
 pub mod circuit;
 pub mod engine;
 pub mod fallback;
@@ -18,6 +19,7 @@ pub mod provider;
 pub mod sanitize;
 pub mod schema;
 
+pub use agent::{AgenticTriageLoop, CircuitBreaker, ContextdClient, TooldClient};
 pub use circuit::{
     AdaptiveTimeoutConfig, LatencyTracker, ProviderAction, ProviderBreaker, ProviderCircuitState,
 };

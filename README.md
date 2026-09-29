@@ -25,6 +25,7 @@
 
 Sentry treats LLM inference strictly as an **untrusted advisory component**:
 
+* **Autonomous Agentic Triage Loops**: Closed-loop diagnostic iteration with error reflection, circuit breaking (maximum 5 iterations or 30s timeout), and verified state evaluation before committing remediations.
 * **No Shell Execution**: The AI engine has zero access to shell execution (`sh`, `bash`, `exec`). It can never run arbitrary scripts or modify files.
 * **Deterministic Whitelists**: Remediation is limited to hardcoded state transitions (`RestartUnit`, `ReloadUnit`, `ResetFailedUnit`) executed via typed D-Bus method calls if—and only if—explicitly permitted by `/etc/systemd-sentry/policy.toml`.
 * **Kernel & Host Sandboxing**: `systemd-sentry` runs under an unprivileged `sentry` user with dropped capabilities (`ProtectSystem=strict`, `NoNewPrivileges=yes`, `MemoryDenyWriteExecute=yes`, `ProtectHome=yes`).

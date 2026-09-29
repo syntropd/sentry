@@ -1,6 +1,6 @@
 {
  "repo": "sentry",
- "rev": "d1db9ac",
+ "rev": "fb38384",
  "dirty": true,
  "pages": [
   {
@@ -102,6 +102,34 @@
    "reach": 0
   },
   {
+   "path": "./crates/sentry-core/src/models/agent/agent_plan.rs",
+   "lines": 41,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 1
+  },
+  {
+   "path": "./crates/sentry-core/src/models/agent/agent_verdict.rs",
+   "lines": 65,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 1
+  },
+  {
+   "path": "./crates/sentry-core/src/models/agent/mod.rs",
+   "lines": 9,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 0
+  },
+  {
+   "path": "./crates/sentry-core/src/models/agent/step_record.rs",
+   "lines": 78,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 2
+  },
+  {
    "path": "./crates/sentry-core/src/models/event/coredump.rs",
    "lines": 124,
    "bin_bytes": null,
@@ -131,7 +159,7 @@
   },
   {
    "path": "./crates/sentry-core/src/models/mod.rs",
-   "lines": 35,
+   "lines": 37,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
@@ -341,7 +369,7 @@
   },
   {
    "path": "./crates/sentry-daemon/src/commands/serve/cmd_triage.rs",
-   "lines": 100,
+   "lines": 112,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 2
@@ -515,6 +543,48 @@
    "reach": 1
   },
   {
+   "path": "./crates/sentry-diagnostic/src/agent/agent_loop.rs",
+   "lines": 161,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 1
+  },
+  {
+   "path": "./crates/sentry-diagnostic/src/agent/circuit_breaker.rs",
+   "lines": 84,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 2
+  },
+  {
+   "path": "./crates/sentry-diagnostic/src/agent/client_contextd.rs",
+   "lines": 102,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 2
+  },
+  {
+   "path": "./crates/sentry-diagnostic/src/agent/client_toold.rs",
+   "lines": 99,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 2
+  },
+  {
+   "path": "./crates/sentry-diagnostic/src/agent/mod.rs",
+   "lines": 13,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 0
+  },
+  {
+   "path": "./crates/sentry-diagnostic/src/agent/reflect_error.rs",
+   "lines": 72,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 4
+  },
+  {
    "path": "./crates/sentry-diagnostic/src/circuit/breaker.rs",
    "lines": 153,
    "bin_bytes": null,
@@ -586,7 +656,7 @@
   },
   {
    "path": "./crates/sentry-diagnostic/src/lib.rs",
-   "lines": 35,
+   "lines": 37,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0

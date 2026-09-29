@@ -80,8 +80,15 @@ pub async fn execute_triage(unit: &str, json: bool, config: &DaemonConfig) -> i3
     let engine = DiagnosticEngine::with_config(Some(provider), config.provider.adaptive.clone());
     let diagnostic = engine.diagnose(&incident).await;
 
+    let mut agent = sentry_diagnostic::AgenticTriageLoop::default();
+    let agent_verdict = agent.run_triage(&incident).await.ok();
+
     if json {
-        println!("{}", serde_json::to_string_pretty(&diagnostic).unwrap_or_default());
+        let mut report = serde_json::to_value(&diagnostic).unwrap_or_default();
+        if let Some(v) = agent_verdict {
+            report["agent_verdict"] = serde_json::to_value(&v).unwrap_or_default();
+        }
+        println!("{}", serde_json::to_string_pretty(&report).unwrap_or_default());
     } else {
         println!("============================================================");
         println!(" DIAGNOSTIC TRIAGE REPORT: {}", unit);
@@ -89,6 +96,11 @@ pub async fn execute_triage(unit: &str, json: bool, config: &DaemonConfig) -> i3
         println!("Severity:     {:?}", diagnostic.severity);
         println!("Root Cause:   {}", diagnostic.root_cause.summary);
         println!("Details:      {}", diagnostic.root_cause.detail);
+        if let Some(ref v) = agent_verdict {
+            println!("\nAutonomous Agent Findings ({} steps):", v.total_steps);
+            println!("  Root Cause: {}", v.root_cause);
+            println!("  Evidence:   {}", v.explanation);
+        }
         println!("\nProposed Remediation:");
         println!("  Action:     {:?}", diagnostic.proposed_remediation.action);
         println!("  Confidence: {:.2}", diagnostic.proposed_remediation.confidence);
