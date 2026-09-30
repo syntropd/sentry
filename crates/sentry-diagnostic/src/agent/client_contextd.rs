@@ -47,13 +47,14 @@ impl ContextdClient {
             Err(_) => return Err(AgentLoopError::ContextRetrievalFailed("connection timed out".into())),
         };
 
-        let unit = if let Some(pos) = query.find("unit ") {
+        let raw_unit = if let Some(pos) = query.find("unit ") {
             query[pos + 5..].split_whitespace().next().unwrap_or(query)
         } else if let Some(w) = query.split_whitespace().find(|w| w.contains('.')) {
             w
         } else {
             query.trim()
         };
+        let unit = raw_unit.trim_matches(|c: char| !c.is_alphanumeric() && c != '.' && c != '-' && c != '_');
 
         let req = json!({
             "method": "io.syntrop.Context1.GetUnitContext",
@@ -103,7 +104,12 @@ impl ContextdClient {
                 Ok(parts.join("\n"))
             }
         } else if let Some(err) = reply.get("error").and_then(|e| e.as_str()) {
-            Err(AgentLoopError::ContextRetrievalFailed(err.to_string()))
+            let reason = reply
+                .pointer("/parameters/reason")
+                .and_then(|r| r.as_str())
+                .or_else(|| reply.pointer("/parameters/parameter").and_then(|p| p.as_str()))
+                .unwrap_or(err);
+            Err(AgentLoopError::ContextRetrievalFailed(format!("{err}: {reason}")))
         } else {
             Ok(reply.to_string())
         }

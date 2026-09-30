@@ -78,7 +78,11 @@ impl TooldClient {
         if let Some(stdout) = reply.pointer("/parameters/result/stdout").and_then(|v| v.as_str()) {
             Ok(stdout.to_string())
         } else if let Some(err) = reply.get("error").and_then(|e| e.as_str()) {
-            Err(AgentLoopError::ToolExecutionFailed(err.to_string()))
+            let reason = reply
+                .pointer("/parameters/reason")
+                .and_then(|r| r.as_str())
+                .unwrap_or(err);
+            Err(AgentLoopError::ToolExecutionFailed(format!("{err}: {reason}")))
         } else {
             Ok(reply.to_string())
         }
