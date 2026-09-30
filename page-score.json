@@ -1,6 +1,6 @@
 {
  "repo": "sentry",
- "rev": "7d6b4ec",
+ "rev": "1efaedf",
  "dirty": true,
  "pages": [
   {
@@ -439,7 +439,7 @@
   },
   {
    "path": "./crates/sentry-daemon/src/daemon/incident_manager.rs",
-   "lines": 207,
+   "lines": 211,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 2

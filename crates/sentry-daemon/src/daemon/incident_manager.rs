@@ -65,8 +65,10 @@ impl IncidentManager {
         let s1_classifier = SystemOneClassifier::default();
         let s1_verdict = s1_classifier.classify_resilient(&incident).await;
 
-        let diagnostic = if is_degraded {
-            info!("Load shedding active: performing deterministic fallback triage on {}", unit_name);
+        let diagnostic = if is_degraded || s1_verdict.tier == DecisionTier::High {
+            if is_degraded {
+                info!("Load shedding active: performing deterministic fallback triage on {}", unit_name);
+            }
             DeterministicFallbackEngine::new().triage(&incident)
         } else {
             let engine = {
@@ -96,7 +98,8 @@ impl IncidentManager {
                 let action = match s1_verdict.fault_class {
                     FaultClass::TransientRestart => RemediationAction::Restart,
                     FaultClass::ConfigDrift => RemediationAction::Reload,
-                    _ => diagnostic.proposed_remediation.action.clone(),
+                    FaultClass::DependencyFailure => RemediationAction::RestartWithBackoff,
+                    FaultClass::ManualTriageRequired => RemediationAction::NoAction,
                 };
                 let mut remediation = diagnostic.proposed_remediation.clone();
                 remediation.action = action.clone();
@@ -140,7 +143,8 @@ impl IncidentManager {
                 let action = match s1_verdict.fault_class {
                     FaultClass::TransientRestart => RemediationAction::Restart,
                     FaultClass::ConfigDrift => RemediationAction::Reload,
-                    _ => diagnostic.proposed_remediation.action.clone(),
+                    FaultClass::DependencyFailure => RemediationAction::RestartWithBackoff,
+                    FaultClass::ManualTriageRequired => RemediationAction::EscalateToAdmin,
                 };
                 let pending_inc = PendingIncident {
                     incident_id: incident.incident_id.to_string(),
