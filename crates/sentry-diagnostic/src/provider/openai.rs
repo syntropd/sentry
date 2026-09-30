@@ -19,6 +19,7 @@ pub struct OpenAiClient {
     client: Client,
     temperature: f32,
     max_retries: usize,
+    reasoning_effort: Option<String>,
 }
 
 impl OpenAiClient {
@@ -42,12 +43,19 @@ impl OpenAiClient {
             client,
             temperature: 0.1,
             max_retries: 2,
+            reasoning_effort: None,
         }
     }
 
     /// Sets temperature.
     pub fn with_temperature(mut self, temp: f32) -> Self {
         self.temperature = temp;
+        self
+    }
+
+    /// Sets reasoning effort.
+    pub fn with_reasoning_effort(mut self, effort: Option<String>) -> Self {
+        self.reasoning_effort = effort;
         self
     }
 
@@ -99,6 +107,9 @@ impl OpenAiClient {
                 "temperature": self.temperature,
                 "max_completion_tokens": 2048
             });
+            if let Some(effort) = &self.reasoning_effort {
+                body["reasoning_effort"] = json!(effort);
+            }
             if with_response_format {
                 body["response_format"] = openai_response_format();
             }

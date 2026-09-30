@@ -42,6 +42,9 @@ pub struct ProviderConfig {
     /// Adaptive timeout and circuit breaker configuration.
     #[serde(default)]
     pub adaptive: crate::circuit::AdaptiveTimeoutConfig,
+    /// Reasoning effort level for reasoning models.
+    #[serde(default)]
+    pub reasoning_effort: Option<String>,
 }
 
 impl Default for ProviderConfig {
@@ -54,6 +57,7 @@ impl Default for ProviderConfig {
             timeout: Duration::from_secs(45),
             temperature: 0.1,
             adaptive: crate::circuit::AdaptiveTimeoutConfig::default(),
+            reasoning_effort: Some("low".to_string()),
         }
     }
 }
@@ -73,7 +77,8 @@ pub fn create_provider(config: &ProviderConfig) -> Box<dyn LlmProvider> {
                 &config.model,
                 config.timeout,
             )
-            .with_temperature(config.temperature);
+            .with_temperature(config.temperature)
+            .with_reasoning_effort(config.reasoning_effort.clone());
             Box::new(client)
         }
     }

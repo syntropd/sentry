@@ -13,6 +13,7 @@ fn test_create_llama_cpp_provider() {
         timeout: Duration::from_secs(30),
         temperature: 0.1,
         adaptive: Default::default(),
+        reasoning_effort: None,
     };
 
     let provider = create_provider(&config);
@@ -29,6 +30,7 @@ fn test_create_openai_provider() {
         timeout: Duration::from_secs(30),
         temperature: 0.1,
         adaptive: Default::default(),
+        reasoning_effort: None,
     };
 
     let provider = create_provider(&config);
