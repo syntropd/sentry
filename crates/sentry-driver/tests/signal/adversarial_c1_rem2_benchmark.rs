@@ -17,16 +17,24 @@ use std::sync::atomic::{AtomicUsize, Ordering};
 use std::time::Instant;
 use tempfile::tempdir;
 
+extern "C" {
+    fn gettid() -> i32;
+}
+
 struct AllocTracker;
 static TOTAL_ALLOC_COUNT: AtomicUsize = AtomicUsize::new(0);
 static TOTAL_ALLOC_BYTES: AtomicUsize = AtomicUsize::new(0);
+static TARGET_TID: AtomicUsize = AtomicUsize::new(0);
 
 unsafe impl GlobalAlloc for AllocTracker {
     unsafe fn alloc(&self, layout: Layout) -> *mut u8 {
         let ptr = System.alloc(layout);
         if !ptr.is_null() {
-            TOTAL_ALLOC_COUNT.fetch_add(1, Ordering::Relaxed);
-            TOTAL_ALLOC_BYTES.fetch_add(layout.size(), Ordering::Relaxed);
+            let tid = TARGET_TID.load(Ordering::Relaxed);
+            if tid != 0 && gettid() as usize == tid {
+                TOTAL_ALLOC_COUNT.fetch_add(1, Ordering::Relaxed);
+                TOTAL_ALLOC_BYTES.fetch_add(layout.size(), Ordering::Relaxed);
+            }
         }
         ptr
     }
@@ -50,6 +58,8 @@ fn test_empirical_container_fallback_benchmarks_and_invariants() {
     assert!(warmup.some.avg10 >= 0.0);
 
     let iters = 1_000;
+    let tid = unsafe { gettid() as usize };
+    TARGET_TID.store(tid, Ordering::SeqCst);
     let start_allocs = TOTAL_ALLOC_COUNT.load(Ordering::SeqCst);
     let start_bytes = TOTAL_ALLOC_BYTES.load(Ordering::SeqCst);
     let start_time = Instant::now();
@@ -62,6 +72,7 @@ fn test_empirical_container_fallback_benchmarks_and_invariants() {
     let elapsed = start_time.elapsed();
     let end_allocs = TOTAL_ALLOC_COUNT.load(Ordering::SeqCst);
     let end_bytes = TOTAL_ALLOC_BYTES.load(Ordering::SeqCst);
+    TARGET_TID.store(0, Ordering::SeqCst);
 
     let alloc_delta = end_allocs.saturating_sub(start_allocs);
     let byte_delta = end_bytes.saturating_sub(start_bytes);
