@@ -7,7 +7,7 @@ use tokio::io::{AsyncReadExt, AsyncWriteExt};
 use tokio::net::UnixStream;
 use tokio::time::{timeout, Duration};
 
-const DEFAULT_CONTEXTD_SOCK: &str = "/run/syntrop/contextd.sock";
+const DEFAULT_CONTEXTD_SOCK: &str = "/run/syntrop/io.syntrop.Context1";
 const TIMEOUT: Duration = Duration::from_secs(5);
 
 /// Client for semantic incident and historical context retrieval via contextd.
@@ -47,11 +47,19 @@ impl ContextdClient {
             Err(_) => return Err(AgentLoopError::ContextRetrievalFailed("connection timed out".into())),
         };
 
+        let unit = if let Some(pos) = query.find("unit ") {
+            query[pos + 5..].split_whitespace().next().unwrap_or(query)
+        } else if let Some(w) = query.split_whitespace().find(|w| w.contains('.')) {
+            w
+        } else {
+            query.trim()
+        };
+
         let req = json!({
-            "method": "io.syntrop.Context1.SearchContext",
+            "method": "io.syntrop.Context1.GetUnitContext",
             "parameters": {
-                "query": query,
-                "limit": 3
+                "unit": unit,
+                "since_seconds": 3600
             }
         });
 
@@ -74,12 +82,26 @@ impl ContextdClient {
         let reply: Value = serde_json::from_slice(&buf)
             .map_err(|e| AgentLoopError::ContextRetrievalFailed(format!("deserialize reply: {e}")))?;
 
-        if let Some(matches) = reply.pointer("/parameters/matches").and_then(|v| v.as_array()) {
-            let texts: Vec<String> = matches
-                .iter()
-                .filter_map(|m| m.get("text").and_then(|t| t.as_str()).map(str::to_string))
-                .collect();
-            Ok(texts.join("\n---\n"))
+        if let Some(context) = reply.pointer("/parameters/context") {
+            let mut parts = Vec::new();
+            if let Some(summary) = context.get("summary").and_then(|s| s.as_str()) {
+                parts.push(format!("Summary: {}", summary));
+            }
+            if let Some(diffs) = context.get("config_diffs").and_then(|d| d.as_array()) {
+                if !diffs.is_empty() {
+                    parts.push(format!("Configuration changes: {}", diffs.len()));
+                }
+            }
+            if let Some(pkgs) = context.get("package_upgrades").and_then(|p| p.as_array()) {
+                if !pkgs.is_empty() {
+                    parts.push(format!("Package upgrades: {}", pkgs.len()));
+                }
+            }
+            if parts.is_empty() {
+                Ok(context.to_string())
+            } else {
+                Ok(parts.join("\n"))
+            }
         } else if let Some(err) = reply.get("error").and_then(|e| e.as_str()) {
             Err(AgentLoopError::ContextRetrievalFailed(err.to_string()))
         } else {

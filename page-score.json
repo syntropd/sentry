@@ -1,6 +1,6 @@
 {
  "repo": "sentry",
- "rev": "54ef647",
+ "rev": "9dff859",
  "dirty": true,
  "pages": [
   {
@@ -558,7 +558,7 @@
   },
   {
    "path": "./crates/sentry-diagnostic/src/agent/client_contextd.rs",
-   "lines": 102,
+   "lines": 124,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 2
@@ -1482,7 +1482,7 @@
   },
   {
    "path": "./crates/sentry-driver/tests/signal/adversarial_c1_rem2_benchmark.rs",
-   "lines": 239,
+   "lines": 250,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0

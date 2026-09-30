@@ -7,7 +7,7 @@ use tokio::io::{AsyncReadExt, AsyncWriteExt};
 use tokio::net::UnixStream;
 use tokio::time::{timeout, Duration};
 
-const DEFAULT_TOOLD_SOCK: &str = "/run/syntrop/toold.sock";
+const DEFAULT_TOOLD_SOCK: &str = "/run/syntrop/io.syntrop.Tool1";
 const TIMEOUT: Duration = Duration::from_secs(5);
 
 /// Client for invoking sandboxed diagnostic tools via toold.
