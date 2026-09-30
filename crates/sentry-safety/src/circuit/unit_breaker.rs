@@ -146,6 +146,15 @@ impl UnitBreaker {
         self.trip_timestamps.clear();
     }
 
+    /// Immediately permanently locks this breaker against restart loops.
+    pub fn lock_permanently(&mut self, now: Instant) {
+        self.last_activity = now;
+        self.state = CircuitState::PermanentlyLocked {
+            locked_at: now,
+            flap_trips: self.trip_timestamps.len().max(1),
+        };
+    }
+
     /// Returns unit name.
     pub fn unit(&self) -> &str {
         &self.unit

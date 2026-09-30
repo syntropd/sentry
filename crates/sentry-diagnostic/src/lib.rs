@@ -18,6 +18,7 @@ pub mod fallback;
 pub mod provider;
 pub mod sanitize;
 pub mod schema;
+pub mod system_one;
 
 pub use agent::{AgenticTriageLoop, CircuitBreaker, ContextdClient, TooldClient};
 pub use circuit::{
@@ -33,5 +34,9 @@ pub use sanitize::{DiagnosticSanitizer, SanitizationPipeline};
 pub use schema::{
     diagnostic_payload_json_schema, openai_response_format, DiagnosticPrompt, ProviderHealth,
     RawLlmResponse,
+};
+pub use system_one::{
+    build_decision_prompt, DecisionCandidate, RawDecisionResult, ScoredCandidate,
+    SystemOneClassifier, SystemOneClient,
 };
 

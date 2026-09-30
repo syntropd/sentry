@@ -35,3 +35,5 @@ pub use verdict::severity::Severity;
 pub use verdict::gang_triage::{
     triage_gang_crash, GangCrashContext, GangErrorCategory, GangTriageVerdict,
 };
+pub use verdict::decision::{DecisionTier, FaultClass, SystemOneVerdict};
+pub use verdict::decision;

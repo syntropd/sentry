@@ -1,6 +1,6 @@
 {
  "repo": "sentry",
- "rev": "9dff859",
+ "rev": "7d6b4ec",
  "dirty": true,
  "pages": [
   {
@@ -96,7 +96,7 @@
   },
   {
    "path": "./crates/sentry-core/src/lib.rs",
-   "lines": 23,
+   "lines": 24,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
@@ -159,7 +159,7 @@
   },
   {
    "path": "./crates/sentry-core/src/models/mod.rs",
-   "lines": 37,
+   "lines": 39,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
@@ -193,6 +193,13 @@
    "reach": 2
   },
   {
+   "path": "./crates/sentry-core/src/models/verdict/decision.rs",
+   "lines": 139,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 2
+  },
+  {
    "path": "./crates/sentry-core/src/models/verdict/diagnostic.rs",
    "lines": 113,
    "bin_bytes": null,
@@ -208,7 +215,7 @@
   },
   {
    "path": "./crates/sentry-core/src/models/verdict/mod.rs",
-   "lines": 24,
+   "lines": 26,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
@@ -417,6 +424,13 @@
    "reach": 4
   },
   {
+   "path": "./crates/sentry-daemon/src/daemon/audit_log.rs",
+   "lines": 151,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 2
+  },
+  {
    "path": "./crates/sentry-daemon/src/daemon/event_multiplexer.rs",
    "lines": 100,
    "bin_bytes": null,
@@ -425,17 +439,24 @@
   },
   {
    "path": "./crates/sentry-daemon/src/daemon/incident_manager.rs",
-   "lines": 113,
+   "lines": 207,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 2
   },
   {
    "path": "./crates/sentry-daemon/src/daemon/mod.rs",
-   "lines": 11,
+   "lines": 17,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
+  },
+  {
+   "path": "./crates/sentry-daemon/src/daemon/pending_queue.rs",
+   "lines": 210,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 2
   },
   {
    "path": "./crates/sentry-daemon/src/daemon/state.rs",
@@ -446,7 +467,7 @@
   },
   {
    "path": "./crates/sentry-daemon/src/daemon/supervisor.rs",
-   "lines": 77,
+   "lines": 80,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 2
@@ -558,14 +579,14 @@
   },
   {
    "path": "./crates/sentry-diagnostic/src/agent/client_contextd.rs",
-   "lines": 124,
+   "lines": 130,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 2
   },
   {
    "path": "./crates/sentry-diagnostic/src/agent/client_toold.rs",
-   "lines": 99,
+   "lines": 103,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 2
@@ -656,7 +677,7 @@
   },
   {
    "path": "./crates/sentry-diagnostic/src/lib.rs",
-   "lines": 37,
+   "lines": 42,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
@@ -743,7 +764,7 @@
    "lines": 102,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 2
+   "reach": 4
   },
   {
    "path": "./crates/sentry-diagnostic/src/schema/response.rs",
@@ -751,6 +772,34 @@
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 1
+  },
+  {
+   "path": "./crates/sentry-diagnostic/src/system_one/classifier.rs",
+   "lines": 124,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 1
+  },
+  {
+   "path": "./crates/sentry-diagnostic/src/system_one/client.rs",
+   "lines": 149,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 2
+  },
+  {
+   "path": "./crates/sentry-diagnostic/src/system_one/mod.rs",
+   "lines": 17,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 0
+  },
+  {
+   "path": "./crates/sentry-diagnostic/src/system_one/prompt_builder.rs",
+   "lines": 91,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 2
   },
   {
    "path": "./crates/sentry-diagnostic/tests/adversarial_circuit_breaker.rs",
@@ -1706,7 +1755,7 @@
   },
   {
    "path": "./crates/sentry-safety/src/circuit/registry.rs",
-   "lines": 135,
+   "lines": 145,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 1
@@ -1720,7 +1769,7 @@
   },
   {
    "path": "./crates/sentry-safety/src/circuit/unit_breaker.rs",
-   "lines": 199,
+   "lines": 208,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 2

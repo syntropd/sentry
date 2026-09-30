@@ -61,6 +61,16 @@ impl CircuitBreakerRegistry {
         }
     }
 
+    /// Immediately permanently locks a unit against restart loops.
+    pub fn lock_unit(&mut self, unit: &str, now: Instant) {
+        self.ensure_capacity_or_evict(now);
+        let breaker = self
+            .breakers
+            .entry(unit.to_string())
+            .or_insert_with(|| UnitBreaker::new(unit, now));
+        breaker.lock_permanently(now);
+    }
+
     /// Manually resets a unit breaker (clearing lockouts and failure counts).
     pub fn reset_unit(&mut self, unit: &str, now: Instant) -> bool {
         if let Some(breaker) = self.breakers.get_mut(unit) {

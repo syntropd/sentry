@@ -20,4 +20,5 @@ pub use models::{
     PsiLine, PsiRecord, RemediationAction, RiskLevel, RootCause, Severity, UnitFailedDetails,
     DnsHealthState, NetworkOperationalState, PstorePanicReport, ShutdownState, TimeSyncStatus,
     GangCrashContext, GangErrorCategory, GangTriageVerdict, triage_gang_crash,
+    DecisionTier, FaultClass, SystemOneVerdict,
 };

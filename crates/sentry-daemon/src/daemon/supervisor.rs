@@ -28,6 +28,7 @@ pub async fn run_supervisor(config: DaemonConfig) -> Result<(), Box<dyn std::err
     let state = Arc::new(Mutex::new(DaemonState::new(config.clone(), gatekeeper.clone())));
 
     // 3. Bind or adopt UNIX domain socket
+    let is_socket_activated = std::env::var_os("LISTEN_FDS").is_some();
     let ipc_listener = bind_or_activate_socket(&config.socket_path)?;
     info!("IPC server listening on {}", config.socket_path);
 
@@ -66,10 +67,12 @@ pub async fn run_supervisor(config: DaemonConfig) -> Result<(), Box<dyn std::err
     info!("Shutting down supervisor: notifying STOPPING=1");
     let _ = notify_stopping();
 
-    // Clean up socket file if present on filesystem
-    let sock_path = Path::new(&config.socket_path);
-    if sock_path.exists() {
-        let _ = fs::remove_file(sock_path);
+    // Clean up socket file if present on filesystem and not socket activated
+    if !is_socket_activated {
+        let sock_path = Path::new(&config.socket_path);
+        if sock_path.exists() {
+            let _ = fs::remove_file(sock_path);
+        }
     }
 
     info!("Supervisor shutdown cleanly completed");
