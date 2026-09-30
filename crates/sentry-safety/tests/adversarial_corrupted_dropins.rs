@@ -77,7 +77,7 @@ fn test_dropin_non_toml_files_and_directories_ignored() {
     // Diverse non-toml file types
     fs::write(dropin_dir.join("notes.txt"), "This is a text note").unwrap();
     fs::write(dropin_dir.join("script.sh"), "#!/bin/bash\nexit 0").unwrap();
-    fs::write(dropin_dir.join("binary.bin"), &[0x00, 0x01, 0x02, 0x03]).unwrap();
+    fs::write(dropin_dir.join("binary.bin"), [0x00, 0x01, 0x02, 0x03]).unwrap();
     fs::write(dropin_dir.join("config.yaml"), "key: value").unwrap();
     fs::write(dropin_dir.join("policy.json"), "{\"key\": \"value\"}").unwrap();
 

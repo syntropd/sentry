@@ -62,7 +62,7 @@ impl PsiRecord {
 
     /// Checks if full stall is currently detected.
     pub fn is_fully_stalled(&self, threshold_pct: f64) -> bool {
-        self.full.as_ref().map_or(false, |f| f.avg10 >= threshold_pct)
+        self.full.as_ref().is_some_and(|f| f.avg10 >= threshold_pct)
     }
 }
 
