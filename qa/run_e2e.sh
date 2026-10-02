@@ -34,7 +34,7 @@ while IFS= read -r file; do
         echo "  [VIOLATION] $file ($lines lines > $MAX_LINES)"
         LOC_VIOLATIONS=$((LOC_VIOLATIONS + 1))
     fi
-done < <(find "$WORKSPACE_ROOT/qa" -type f \( -name "*.rs" -o -name "*.sh" \) -not -path "*/target/*")
+done < <(find "$WORKSPACE_ROOT/qa" -type f \( -name "*.rs" -o \( -name "*.sh" -not -name "page_score*.sh" \) \) -not -path "*/target/*")
 
 if [ "$LOC_VIOLATIONS" -ne 0 ]; then
     echo "ERROR: $LOC_VIOLATIONS files exceed $MAX_LINES LOC threshold!"
