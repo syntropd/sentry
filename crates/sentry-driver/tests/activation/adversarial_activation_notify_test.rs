@@ -27,15 +27,15 @@ fn test_adversarial_listen_pid_corrupt_values() {
     }
 
     env::remove_var("LISTEN_PID");
-    assert_eq!(validate_listen_pid().unwrap(), false);
+    assert!(!validate_listen_pid().unwrap());
 
     // Matching PID
     env::set_var("LISTEN_PID", process::id().to_string());
-    assert_eq!(validate_listen_pid().unwrap(), true);
+    assert!(validate_listen_pid().unwrap());
 
     // Mismatched PID
     env::set_var("LISTEN_PID", (process::id() + 9999).to_string());
-    assert_eq!(validate_listen_pid().unwrap(), false);
+    assert!(!validate_listen_pid().unwrap());
 
     env::remove_var("LISTEN_PID");
 }
@@ -215,5 +215,5 @@ fn test_adversarial_send_notify_missing_socket_safe() {
 
     // When NOTIFY_SOCKET is unset, send_notify returns Ok(false) without failing
     let sent = send_notify(&[NotifyState::Ready], false).unwrap();
-    assert_eq!(sent, false);
+    assert!(!sent);
 }

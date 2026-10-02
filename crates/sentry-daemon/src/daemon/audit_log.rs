@@ -39,6 +39,7 @@ pub struct AuditLogger;
 
 impl AuditLogger {
     /// Emits a structured audit entry.
+    #[allow(clippy::too_many_arguments)]
     pub fn log(
         incident_id: &str,
         unit: &str,

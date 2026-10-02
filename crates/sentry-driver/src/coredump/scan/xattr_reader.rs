@@ -40,10 +40,7 @@ pub fn read_coredump_xattrs(path: &Path) -> Result<CoredumpXattrs, CoredumpError
 /// Dynamically discovers all attribute names on the file.
 fn list_coredump_xattr_names(path: &Path) -> Vec<String> {
     // Pass 1: determine required buffer size
-    let needed = match listxattr(path, &mut []) {
-        Ok(sz) => sz,
-        Err(_) => 4096, // Fallback initial guess if query with empty slice fails
-    };
+    let needed = listxattr(path, &mut []).unwrap_or(4096);
 
     if needed == 0 {
         return Vec::new();

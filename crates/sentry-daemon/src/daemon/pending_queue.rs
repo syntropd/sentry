@@ -78,7 +78,7 @@ impl PendingQueue {
             .open(&lock_path)?;
 
         flock(&lock_file, FlockOperation::LockExclusive)
-            .map_err(|e| std::io::Error::new(std::io::ErrorKind::Other, e))?;
+            .map_err(std::io::Error::other)?;
 
         let res = f(&pending, &self.count_file());
 
@@ -99,7 +99,7 @@ impl PendingQueue {
         let tmp_count = count_path.with_extension("tmp");
         {
             let mut f = File::create(&tmp_count)?;
-            write!(f, "{}\n", count)?;
+            writeln!(f, "{}", count)?;
             f.sync_all()?;
         }
         let _ = fs::rename(tmp_count, count_path);
@@ -119,7 +119,7 @@ impl PendingQueue {
             })
         })
         .await
-        .map_err(|e| std::io::Error::new(std::io::ErrorKind::Other, e))?
+        .map_err(std::io::Error::other)?
     }
 
     /// Removes an incident from the pending queue by ID.
@@ -141,7 +141,7 @@ impl PendingQueue {
             })
         })
         .await
-        .map_err(|e| std::io::Error::new(std::io::ErrorKind::Other, e))?
+        .map_err(std::io::Error::other)?
     }
 
     /// Lists all pending incidents currently staged.
@@ -167,7 +167,7 @@ impl PendingQueue {
             })
         })
         .await
-        .map_err(|e| std::io::Error::new(std::io::ErrorKind::Other, e))?
+        .map_err(std::io::Error::other)?
     }
 }
 

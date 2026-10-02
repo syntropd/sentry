@@ -137,7 +137,7 @@ fn test_adversarial_prpsinfo_all_zeroes() {
     note.extend_from_slice(&descsz.to_le_bytes());
     note.extend_from_slice(&NT_PRPSINFO.to_le_bytes());
     note.extend_from_slice(b"CORE");
-    note.extend_from_slice(&vec![0u8; 136]); // all zeroes
+    note.extend_from_slice(&[0u8; 136]); // all zeroes
 
     let segs = [(0_u64, note.len() as u64)];
     let info = parse_elf_notes(&note, &segs, true, true);

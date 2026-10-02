@@ -83,7 +83,7 @@ pub fn parse_cli_args(args: &[String]) -> Result<CliArgs, (String, i32)> {
     let command = match subcmd {
         "daemon" => Command::Daemon,
         "status" => {
-            let json = sub_args.iter().any(|&a| a == "--json");
+            let json = sub_args.contains(&"--json");
             Command::Status { json }
         }
         "check" => {
@@ -98,7 +98,7 @@ pub fn parse_cli_args(args: &[String]) -> Result<CliArgs, (String, i32)> {
                     EX_USAGE,
                 ));
             };
-            let json = sub_args.iter().any(|&a| a == "--json");
+            let json = sub_args.contains(&"--json");
             Command::Triage { unit: unit.to_string(), json }
         }
         "monitor" => Command::Monitor,
@@ -125,7 +125,7 @@ pub fn parse_cli_args(args: &[String]) -> Result<CliArgs, (String, i32)> {
                     EX_USAGE,
                 ));
             };
-            let json = sub_args.iter().any(|&a| a == "--json");
+            let json = sub_args.contains(&"--json");
             Command::Inspect { id: id.to_string(), json }
         }
         "reset" => {

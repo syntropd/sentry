@@ -48,14 +48,14 @@ impl UserSessionDiscoverer {
         if let Some(path) = custom_path {
             let addr = format!("unix:path={}", path.display());
             zbus::connection::Builder::address(addr.as_str())
-                .map_err(|e| DriverError::Io(std::io::Error::new(std::io::ErrorKind::Other, e.to_string())))?
+                .map_err(|e| DriverError::Io(std::io::Error::other(e.to_string())))?
                 .build()
                 .await
-                .map_err(|e| DriverError::Io(std::io::Error::new(std::io::ErrorKind::Other, e.to_string())))
+                .map_err(|e| DriverError::Io(std::io::Error::other(e.to_string())))
         } else {
             Connection::session()
                 .await
-                .map_err(|e| DriverError::Io(std::io::Error::new(std::io::ErrorKind::Other, e.to_string())))
+                .map_err(|e| DriverError::Io(std::io::Error::other(e.to_string())))
         }
     }
 }

@@ -58,8 +58,7 @@ pub async fn execute_setup() -> i32 {
     let base_url = detected_endpoint.unwrap_or_else(|| "http://127.0.0.1:32768/v1".to_string());
 
     // 4. Construct proposed configuration
-    let mut config = DaemonConfig::default();
-    config.provider = ProviderConfig {
+    let provider = ProviderConfig {
         kind,
         base_url: base_url.clone(),
         api_key: None,
@@ -77,6 +76,10 @@ pub async fn execute_setup() -> i32 {
         temperature: 0.1,
         adaptive: Default::default(),
         reasoning_effort: Some("low".to_string()),
+    };
+    let config = DaemonConfig {
+        provider,
+        ..Default::default()
     };
 
     println!("\nProposed /etc/systemd-sentry/config.toml:");

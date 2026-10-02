@@ -19,7 +19,7 @@ impl NetworkdClient {
     pub async fn connect_system() -> Result<Self, DriverError> {
         let conn = Connection::system()
             .await
-            .map_err(|e| DriverError::Io(std::io::Error::new(std::io::ErrorKind::Other, e.to_string())))?;
+            .map_err(|e| DriverError::Io(std::io::Error::other(e.to_string())))?;
         Ok(Self::new(conn))
     }
 

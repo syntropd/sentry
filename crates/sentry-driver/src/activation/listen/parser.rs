@@ -44,10 +44,10 @@ pub fn parse_listen_fds(unset_env: bool) -> Result<Vec<ActivatedSocket>, Activat
     let names = parse_listen_fdnames(count);
     let mut sockets = Vec::with_capacity(count);
 
-    for index in 0..count {
+    for (index, name) in names.iter().enumerate().take(count) {
         let fd = SD_LISTEN_FDS_START + (index as RawFd);
         harden_activated_fd(fd)?;
-        sockets.push(ActivatedSocket::new(fd, &names[index], index));
+        sockets.push(ActivatedSocket::new(fd, name, index));
     }
 
     if unset_env {

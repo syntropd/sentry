@@ -93,10 +93,11 @@ pub fn extract_panic_report(source_path: &str, content: &str) -> Option<PstorePa
             }
         }
 
-        if found_panic && (trimmed.starts_with('?') || trimmed.starts_with("[<") || trimmed.contains("RIP:") || trimmed.contains("Call Trace:")) {
-            if backtrace_snippet.len() < 10 {
-                backtrace_snippet.push(trimmed.to_string());
-            }
+        if found_panic
+            && (trimmed.starts_with('?') || trimmed.starts_with("[<") || trimmed.contains("RIP:") || trimmed.contains("Call Trace:"))
+            && backtrace_snippet.len() < 10
+        {
+            backtrace_snippet.push(trimmed.to_string());
         }
     }
 

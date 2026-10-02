@@ -34,7 +34,7 @@ pub fn extract_backtrace(message: &str, max_frames: usize) -> Option<String> {
                 && trimmed
                     .chars()
                     .nth(1)
-                    .map_or(false, |c| c.is_ascii_digit())
+                    .is_some_and(|c| c.is_ascii_digit())
             {
                 frames.push(trimmed.to_string());
                 if frames.len() >= max_frames {

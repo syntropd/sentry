@@ -69,7 +69,7 @@ pub fn extract_unit_failed_event(update: &UnitStateUpdate) -> Option<UnitFailedE
     let is_failed_state = update.active_state.as_deref() == Some("failed")
         || update.sub_state.as_deref() == Some("failed");
 
-    let is_failure_result = update.result.as_ref().map_or(false, |r| {
+    let is_failure_result = update.result.as_ref().is_some_and(|r| {
         r != "success" && r != "done"
     });
 

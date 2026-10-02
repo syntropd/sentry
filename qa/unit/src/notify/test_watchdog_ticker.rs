@@ -8,6 +8,7 @@ use tempfile::tempdir;
 use tokio::net::UnixDatagram;
 
 #[tokio::test]
+#[allow(clippy::await_holding_lock)]
 async fn test_watchdog_ticker_sends_heartbeats() {
     let _guard = NOTIFY_ENV_LOCK.lock().unwrap();
     let dir = tempdir().unwrap();

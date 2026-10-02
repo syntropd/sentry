@@ -67,9 +67,9 @@ fn print_status_table(data: &serde_json::Value) {
                     .or_else(|| b.get("failure_count"))
                     .and_then(|v| v.as_u64())
                     .unwrap_or(0);
-                let locked = if b.get("permanently_locked").and_then(|v| v.as_bool()).unwrap_or(false) {
-                    "YES"
-                } else if b.get("flap_count").and_then(|v| v.as_u64()).unwrap_or(0) > 0 {
+                let locked = if b.get("permanently_locked").and_then(|v| v.as_bool()).unwrap_or(false)
+                    || b.get("flap_count").and_then(|v| v.as_u64()).unwrap_or(0) > 0
+                {
                     "YES"
                 } else {
                     "NO"
@@ -94,9 +94,9 @@ fn print_status_table(data: &serde_json::Value) {
                     .or_else(|| b.get("failure_count"))
                     .and_then(|v| v.as_u64())
                     .unwrap_or(0);
-                let locked = if b.get("permanently_locked").and_then(|v| v.as_bool()).unwrap_or(false) {
-                    "YES"
-                } else if b.get("flap_count").and_then(|v| v.as_u64()).unwrap_or(0) > 0 {
+                let locked = if b.get("permanently_locked").and_then(|v| v.as_bool()).unwrap_or(false)
+                    || b.get("flap_count").and_then(|v| v.as_u64()).unwrap_or(0) > 0
+                {
                     "YES"
                 } else {
                     "NO"

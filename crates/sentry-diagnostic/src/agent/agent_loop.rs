@@ -9,6 +9,7 @@ use sentry_core::models::IncidentContext;
 use std::time::Instant;
 
 /// Autonomous agent orchestrating closed-loop diagnostic triage.
+#[derive(Default)]
 pub struct AgenticTriageLoop {
     /// Sandboxed execution client.
     pub toold: TooldClient,
@@ -16,16 +17,6 @@ pub struct AgenticTriageLoop {
     pub contextd: ContextdClient,
     /// Execution safety circuit breaker.
     pub breaker: CircuitBreaker,
-}
-
-impl Default for AgenticTriageLoop {
-    fn default() -> Self {
-        Self {
-            toold: TooldClient::default(),
-            contextd: ContextdClient::default(),
-            breaker: CircuitBreaker::default(),
-        }
-    }
 }
 
 impl AgenticTriageLoop {

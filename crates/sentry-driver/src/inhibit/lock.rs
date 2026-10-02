@@ -32,12 +32,12 @@ impl InhibitorLock {
                 &(what, who, why, mode),
             )
             .await
-            .map_err(|e| DriverError::Io(std::io::Error::new(std::io::ErrorKind::Other, e.to_string())))?;
+            .map_err(|e| DriverError::Io(std::io::Error::other(e.to_string())))?;
 
         let fd: OwnedFd = reply
             .body()
             .deserialize()
-            .map_err(|e| DriverError::Io(std::io::Error::new(std::io::ErrorKind::Other, e.to_string())))?;
+            .map_err(|e| DriverError::Io(std::io::Error::other(e.to_string())))?;
 
         Ok(Self {
             fd,

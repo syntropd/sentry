@@ -23,13 +23,17 @@ fn test_default_daemon_config() {
 
 #[test]
 fn test_validator_rejects_inverted_hysteresis() {
-    let mut config = DaemonConfig::default();
-    config.rss_degraded_mb = 16; // degraded > limit (invalid)
+    let config = DaemonConfig {
+        rss_degraded_mb: 16, // degraded > limit (invalid)
+        ..Default::default()
+    };
     let report = validate_configuration(&config);
     assert!(!report.is_valid);
 
-    let mut config2 = DaemonConfig::default();
-    config2.rss_recover_mb = 14; // recover > degraded (invalid)
+    let config2 = DaemonConfig {
+        rss_recover_mb: 14, // recover > degraded (invalid)
+        ..Default::default()
+    };
     let report2 = validate_configuration(&config2);
     assert!(!report2.is_valid);
 }

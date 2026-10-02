@@ -102,7 +102,7 @@ impl IncidentManager {
                     FaultClass::ManualTriageRequired => RemediationAction::NoAction,
                 };
                 let mut remediation = diagnostic.proposed_remediation.clone();
-                remediation.action = action.clone();
+                remediation.action = action;
 
                 if action_allowed && action.is_active_modification() {
                     match remediation_executor
@@ -153,7 +153,7 @@ impl IncidentManager {
                     fault_class: s1_verdict.fault_class,
                     confidence: s1_verdict.confidence,
                     tier: s1_verdict.tier,
-                    proposed_action: action.clone(),
+                    proposed_action: action,
                     explanation: s1_verdict.explanation.clone(),
                     journal_excerpt: incident.journal_lines.clone(),
                 };

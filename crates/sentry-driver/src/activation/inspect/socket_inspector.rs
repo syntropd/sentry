@@ -15,7 +15,7 @@ pub fn is_socket(fd: RawFd) -> bool {
     }
     let borrowed = unsafe { BorrowedFd::borrow_raw(fd) };
     match fstat(borrowed) {
-        Ok(stat) => (stat.st_mode as u32 & 0o170000) == 0o140000,
+        Ok(stat) => (stat.st_mode & 0o170000) == 0o140000,
         Err(_) => false,
     }
 }
