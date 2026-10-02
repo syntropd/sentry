@@ -1,7 +1,7 @@
 {
  "repo": "sentry",
- "rev": "1efaedf",
- "dirty": true,
+ "rev": "6f63293",
+ "dirty": false,
  "pages": [
   {
    "path": "./crates/sentry-core/src/error/collect/coredump_error.rs",
