@@ -1,6 +1,6 @@
 {
  "repo": "sentry",
- "rev": "9cb4473",
+ "rev": "8f08470",
  "dirty": false,
  "pages": [
   {
@@ -369,7 +369,7 @@
   },
   {
    "path": "./crates/sentry-daemon/src/commands/serve/cmd_setup.rs",
-   "lines": 111,
+   "lines": 114,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 2
@@ -425,7 +425,7 @@
   },
   {
    "path": "./crates/sentry-daemon/src/daemon/audit_log.rs",
-   "lines": 151,
+   "lines": 152,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 2
@@ -565,7 +565,7 @@
   },
   {
    "path": "./crates/sentry-diagnostic/src/agent/agent_loop.rs",
-   "lines": 161,
+   "lines": 152,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 1
@@ -1055,7 +1055,7 @@
   },
   {
    "path": "./crates/sentry-driver/src/coredump/scan/xattr_reader.rs",
-   "lines": 147,
+   "lines": 144,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 5
@@ -1384,7 +1384,7 @@
   },
   {
    "path": "./crates/sentry-driver/src/pstore/scanner.rs",
-   "lines": 112,
+   "lines": 113,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 2
@@ -2455,7 +2455,7 @@
   },
   {
    "path": "./qa/unit/src/daemon/test_daemon_config.rs",
-   "lines": 104,
+   "lines": 108,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
@@ -2959,7 +2959,7 @@
   },
   {
    "path": "./qa/unit/src/notify/test_watchdog_ticker.rs",
-   "lines": 38,
+   "lines": 39,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
