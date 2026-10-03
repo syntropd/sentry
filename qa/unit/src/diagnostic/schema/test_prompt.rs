@@ -35,8 +35,8 @@ fn test_prompt_with_coredump_record() {
     let mut coredump = CoredumpRecord::new("app.service", 5001, 11, "SIGSEGV");
     coredump.stack_trace = Some("#0 0x1234 in main ()".to_string());
 
-    let ctx = IncidentContext::new("app.service", DriverEvent::Coredump(coredump.clone()))
-        .with_coredump(coredump);
+    let mut ctx = IncidentContext::new("app.service", DriverEvent::Coredump(coredump.clone()));
+    ctx.coredump = Some(coredump);
 
     let prompt = DiagnosticPrompt::from_incident_context(&ctx);
     assert_eq!(prompt.signal, Some("SIGSEGV".to_string()));

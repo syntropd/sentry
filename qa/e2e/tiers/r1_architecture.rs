@@ -52,7 +52,7 @@ fn test_r1_strict_line_count_enforcement() {
                 }
                 if path.is_dir() {
                     dirs_to_visit.push(path);
-                } else if path.extension().map_or(false, |ext| ext == "rs") {
+                } else if path.extension().is_some_and(|ext| ext == "rs") {
                     files_to_check.push(path);
                 }
             }

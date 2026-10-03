@@ -9,12 +9,10 @@ use std::fs::File;
 use std::net::{TcpListener, UdpSocket};
 use std::os::unix::io::{AsRawFd, FromRawFd, OwnedFd};
 use std::os::unix::net::{UnixDatagram, UnixListener, UnixStream};
+use crate::socket_activation_adversarial::ACTIVATION_TEST_MUTEX as TEST_LOCK;
 use std::path::Path;
-use std::sync::Mutex;
 use std::time::Instant;
 use tempfile::tempdir;
-
-static TEST_LOCK: Mutex<()> = Mutex::new(());
 
 fn count_proc_fds() -> usize {
     std::fs::read_dir("/proc/self/fd")

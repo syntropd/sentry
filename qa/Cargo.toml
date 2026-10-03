@@ -1,12 +1,11 @@
 [package]
 name = "sentry-qa"
-version = "0.4.0"
+version = "0.5.0"
 edition = "2021"
 publish = false
 
-[workspace]
-
-
+[lints.clippy]
+duplicate_mod = "allow"
 [dependencies]
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"

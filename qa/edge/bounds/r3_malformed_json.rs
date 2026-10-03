@@ -29,7 +29,7 @@ fn test_r3_boundary_confidence_range_validation() {
     let test_cases = [(-0.1, false), (0.0, true), (0.5, true), (1.0, true), (1.01, false)];
 
     for (val, should_be_valid) in test_cases {
-        let is_valid = val >= 0.0 && val <= 1.0;
+        let is_valid = (0.0..=1.0).contains(&val);
         assert_eq!(
             is_valid, should_be_valid,
             "Confidence {} validation check failed",

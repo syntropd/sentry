@@ -60,13 +60,13 @@ fn test_r5_operator_cli_subcommand_arguments() {
     }
 
     // Inspect requires an incident ID argument
-    let inspect_args = vec!["sentry", "inspect", "inc-01J8K3M9"];
+    let inspect_args = ["sentry", "inspect", "inc-01J8K3M9"];
     assert_eq!(inspect_args.len(), 3);
     assert_eq!(inspect_args[1], "inspect");
     assert_eq!(inspect_args[2], "inc-01J8K3M9");
 
     // Reset requires a unit name
-    let reset_args = vec!["sentry", "reset", "api-worker.service"];
+    let reset_args = ["sentry", "reset", "api-worker.service"];
     assert_eq!(reset_args.len(), 3);
     assert_eq!(reset_args[1], "reset");
     assert_eq!(reset_args[2], "api-worker.service");

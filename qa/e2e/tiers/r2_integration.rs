@@ -6,11 +6,12 @@ use std::collections::HashMap;
 
 #[test]
 fn test_r2_sd_notify_protocol_datagram_formatting() {
-    let mut messages = Vec::new();
     // Simulate sd_notify READY=1, STATUS, WATCHDOG=1
-    messages.push("READY=1\n");
-    messages.push("STATUS=Sentry operational\n");
-    messages.push("WATCHDOG=1\n");
+    let messages = [
+        "READY=1\n",
+        "STATUS=Sentry operational\n",
+        "WATCHDOG=1\n",
+    ];
 
     let combined = messages.concat();
     assert!(combined.contains("READY=1"));

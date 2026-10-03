@@ -61,7 +61,7 @@ fn test_r6_companion_unit_service_directives() {
 #[test]
 fn test_r6_fuzz_psi_parser_validates_correct_tokens() {
     let input = "some avg10=5.00 avg60=3.00 avg300=1.00 total=5000\n";
-    let mut parts = input.trim().split_whitespace();
+    let mut parts = input.split_whitespace();
     assert_eq!(parts.next(), Some("some"));
 
     let mut found_avg10 = false;

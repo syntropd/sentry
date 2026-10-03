@@ -61,7 +61,7 @@ fn test_tier4_10k_crashes_per_sec_failure_storm() {
     assert_eq!(dropped_load_shed_events, 10_000 - (num_units * 3));
 
     // 4. All breakers must be in Open state
-    for (_, breaker) in &breakers {
+    for breaker in breakers.values() {
         assert_eq!(breaker.state, CircuitState::Open);
     }
 }

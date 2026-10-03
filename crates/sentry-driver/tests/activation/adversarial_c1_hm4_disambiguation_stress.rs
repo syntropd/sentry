@@ -13,11 +13,9 @@ use std::fs::File;
 use std::net::{TcpListener, UdpSocket};
 use std::os::unix::io::{AsRawFd, IntoRawFd};
 use std::os::unix::net::{UnixDatagram, UnixListener, UnixStream};
+use crate::socket_activation_adversarial::ACTIVATION_TEST_MUTEX as TEST_MUTEX;
 use std::process;
-use std::sync::Mutex;
 use tempfile::tempdir;
-
-static TEST_MUTEX: Mutex<()> = Mutex::new(());
 
 fn create_raw_pipe() -> (i32, i32) {
     let mut fds = [0i32; 2];

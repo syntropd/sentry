@@ -49,22 +49,4 @@ impl IncidentContext {
         self.journal_lines = lines;
         self
     }
-
-    /// Attaches pressure telemetry.
-    pub fn with_telemetry(mut self, telemetry: PressureTelemetry) -> Self {
-        self.telemetry = Some(telemetry);
-        self
-    }
-
-    /// Attaches cgroup telemetry.
-    pub fn with_cgroup(mut self, cgroup: CgroupTelemetry) -> Self {
-        self.cgroup = Some(cgroup);
-        self
-    }
-
-    /// Attaches crash record.
-    pub fn with_coredump(mut self, coredump: CoredumpRecord) -> Self {
-        self.coredump = Some(coredump);
-        self
-    }
 }

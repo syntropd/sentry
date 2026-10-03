@@ -2,30 +2,13 @@
 
 use sentry_driver::coredump::lz4_flex;
 use sentry_driver::coredump::stream_reader::{read_bounded_coredump_bytes, MAX_DECOMPRESSED_BYTES};
-use std::alloc::{GlobalAlloc, Layout, System};
+
 use std::fs::File;
 use std::io::{Cursor, Read, Write};
 use std::sync::atomic::{AtomicUsize, Ordering};
 use tempfile::tempdir;
 
-struct AllocTracker;
 static TOTAL_ALLOC_BYTES: AtomicUsize = AtomicUsize::new(0);
-
-unsafe impl GlobalAlloc for AllocTracker {
-    unsafe fn alloc(&self, layout: Layout) -> *mut u8 {
-        let ptr = System.alloc(layout);
-        if !ptr.is_null() {
-            TOTAL_ALLOC_BYTES.fetch_add(layout.size(), Ordering::Relaxed);
-        }
-        ptr
-    }
-    unsafe fn dealloc(&self, ptr: *mut u8, layout: Layout) {
-        System.dealloc(ptr, layout);
-    }
-}
-
-#[global_allocator]
-static GLOBAL: AllocTracker = AllocTracker;
 
 struct CountingReader<R> {
     inner: R,

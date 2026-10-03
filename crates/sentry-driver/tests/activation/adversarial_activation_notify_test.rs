@@ -9,9 +9,7 @@ use sentry_driver::notify::{
 };
 use std::env;
 use std::process;
-use std::sync::Mutex;
-
-static ENV_MUTEX: Mutex<()> = Mutex::new(());
+use crate::socket_activation_adversarial::ACTIVATION_TEST_MUTEX as ENV_MUTEX;
 
 #[test]
 fn test_adversarial_listen_pid_corrupt_values() {

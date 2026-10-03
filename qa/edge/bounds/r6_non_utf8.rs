@@ -39,7 +39,7 @@ fn test_r6_boundary_psi_extreme_and_overflow_values() {
         let parsed: Result<f64, _> = avg10_token.parse();
 
         let is_valid = match parsed {
-            Ok(v) => v.is_finite() && v >= 0.0 && v <= 100.0,
+            Ok(v) => v.is_finite() && (0.0..=100.0).contains(&v),
             Err(_) => false,
         };
         assert!(!is_valid, "PSI token '{}' should be invalid", avg10_token);

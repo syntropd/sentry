@@ -16,16 +16,24 @@ use std::time::Instant;
 use tempfile::tempdir;
 
 struct AllocTracker;
+extern "C" {
+    fn gettid() -> i32;
+}
+
 static TOTAL_ALLOC_COUNT: AtomicUsize = AtomicUsize::new(0);
 static TOTAL_ALLOC_BYTES: AtomicUsize = AtomicUsize::new(0);
 static TOTAL_REALLOC_COUNT: AtomicUsize = AtomicUsize::new(0);
+static TARGET_TID: AtomicUsize = AtomicUsize::new(0);
 
 unsafe impl GlobalAlloc for AllocTracker {
     unsafe fn alloc(&self, layout: Layout) -> *mut u8 {
         let ptr = System.alloc(layout);
         if !ptr.is_null() {
-            TOTAL_ALLOC_COUNT.fetch_add(1, Ordering::Relaxed);
-            TOTAL_ALLOC_BYTES.fetch_add(layout.size(), Ordering::Relaxed);
+            let tid = TARGET_TID.load(Ordering::Relaxed);
+            if tid != 0 && gettid() as usize == tid {
+                TOTAL_ALLOC_COUNT.fetch_add(1, Ordering::Relaxed);
+                TOTAL_ALLOC_BYTES.fetch_add(layout.size(), Ordering::Relaxed);
+            }
         }
         ptr
     }
@@ -33,7 +41,10 @@ unsafe impl GlobalAlloc for AllocTracker {
         System.dealloc(ptr, layout);
     }
     unsafe fn realloc(&self, ptr: *mut u8, layout: Layout, new_size: usize) -> *mut u8 {
-        TOTAL_REALLOC_COUNT.fetch_add(1, Ordering::Relaxed);
+        let tid = TARGET_TID.load(Ordering::Relaxed);
+        if tid != 0 && gettid() as usize == tid {
+            TOTAL_REALLOC_COUNT.fetch_add(1, Ordering::Relaxed);
+        }
         System.realloc(ptr, layout, new_size)
     }
 }
@@ -55,6 +66,10 @@ fn create_pipe() -> (OwnedFd, OwnedFd) {
 
 #[test]
 fn test_c1_benchmark_disambiguation_latency_and_zero_realloc() {
+    let _lock = crate::socket_activation_adversarial::ACTIVATION_TEST_MUTEX
+        .lock()
+        .unwrap_or_else(|e| e.into_inner());
+    TARGET_TID.store(unsafe { gettid() } as usize, Ordering::Relaxed);
     let dir = tempdir().unwrap();
 
     // 1. Construct 10 heterogeneous file descriptors
@@ -156,4 +171,5 @@ fn test_c1_benchmark_disambiguation_latency_and_zero_realloc() {
         "Disambiguation latency ({:.3}µs) must be strictly < 50.0µs",
         micros_per_run
     );
+    TARGET_TID.store(0, Ordering::Relaxed);
 }

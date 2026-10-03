@@ -7,7 +7,7 @@ use std::env;
 use std::process;
 use std::sync::Mutex;
 
-static ACTIVATION_TEST_MUTEX: Mutex<()> = Mutex::new(());
+pub(crate) static ACTIVATION_TEST_MUTEX: Mutex<()> = Mutex::new(());
 
 #[test]
 fn test_activation_missing_pid_is_graceful_noop() {

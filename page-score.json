@@ -1,6 +1,6 @@
 {
  "repo": "sentry",
- "rev": "a15b67a",
+ "rev": "7bfeb7f",
  "dirty": false,
  "pages": [
   {
@@ -145,7 +145,7 @@
   },
   {
    "path": "./crates/sentry-core/src/models/event/incident_context.rs",
-   "lines": 70,
+   "lines": 52,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 2
@@ -802,50 +802,57 @@
    "reach": 2
   },
   {
-   "path": "./crates/sentry-diagnostic/tests/adversarial_circuit_breaker.rs",
+   "path": "./crates/sentry-diagnostic/tests/integration/adversarial_circuit_breaker.rs",
    "lines": 227,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
   },
   {
-   "path": "./crates/sentry-diagnostic/tests/adversarial_circuit_concurrency.rs",
+   "path": "./crates/sentry-diagnostic/tests/integration/adversarial_circuit_concurrency.rs",
    "lines": 137,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
   },
   {
-   "path": "./crates/sentry-diagnostic/tests/adversarial_circuit_empirical.rs",
+   "path": "./crates/sentry-diagnostic/tests/integration/adversarial_circuit_empirical.rs",
    "lines": 242,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
   },
   {
-   "path": "./crates/sentry-diagnostic/tests/adversarial_fallback_inputs.rs",
+   "path": "./crates/sentry-diagnostic/tests/integration/adversarial_fallback_inputs.rs",
    "lines": 223,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
   },
   {
-   "path": "./crates/sentry-diagnostic/tests/adversarial_fuzz_harness.rs",
+   "path": "./crates/sentry-diagnostic/tests/integration/adversarial_fuzz_harness.rs",
    "lines": 176,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
   },
   {
-   "path": "./crates/sentry-diagnostic/tests/adversarial_invariants.rs",
+   "path": "./crates/sentry-diagnostic/tests/integration/adversarial_invariants.rs",
    "lines": 156,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
   },
   {
-   "path": "./crates/sentry-diagnostic/tests/adversarial_llm_responses.rs",
+   "path": "./crates/sentry-diagnostic/tests/integration/adversarial_llm_responses.rs",
    "lines": 175,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 0
+  },
+  {
+   "path": "./crates/sentry-diagnostic/tests/integration.rs",
+   "lines": 14,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
@@ -1433,38 +1440,45 @@
   },
   {
    "path": "./crates/sentry-driver/tests/activation/adversarial_activation_notify_test.rs",
-   "lines": 219,
+   "lines": 217,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
   },
   {
    "path": "./crates/sentry-driver/tests/activation/adversarial_c1_hm4_disambiguation_bench.rs",
-   "lines": 159,
+   "lines": 175,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
   },
   {
    "path": "./crates/sentry-driver/tests/activation/adversarial_c1_hm4_disambiguation_stress.rs",
-   "lines": 216,
+   "lines": 214,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
   },
   {
    "path": "./crates/sentry-driver/tests/activation/adversarial_hm4_socket_disambiguation.rs",
-   "lines": 201,
+   "lines": 199,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
+  },
+  {
+   "path": "./crates/sentry-driver/tests/activation.rs",
+   "lines": 10,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 20
   },
   {
    "path": "./crates/sentry-driver/tests/activation/socket_activation_adversarial.rs",
    "lines": 213,
    "bin_bytes": null,
    "heat_pct": null,
-   "reach": 0
+   "reach": 4
   },
   {
    "path": "./crates/sentry-driver/tests/capture/adversarial_coredump_compressed_frame_test.rs",
@@ -1509,6 +1523,13 @@
    "reach": 0
   },
   {
+   "path": "./crates/sentry-driver/tests/capture.rs",
+   "lines": 12,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 0
+  },
+  {
    "path": "./crates/sentry-driver/tests/container/adversarial_c1_container_fallback_test.rs",
    "lines": 177,
    "bin_bytes": null,
@@ -1530,6 +1551,13 @@
    "reach": 0
   },
   {
+   "path": "./crates/sentry-driver/tests/container.rs",
+   "lines": 6,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 0
+  },
+  {
    "path": "./crates/sentry-driver/tests/signal/adversarial_c1_rem2_benchmark.rs",
    "lines": 250,
    "bin_bytes": null,
@@ -1545,10 +1573,17 @@
   },
   {
    "path": "./crates/sentry-driver/tests/signal/adversarial_remediation_benchmark.rs",
-   "lines": 242,
+   "lines": 225,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
+  },
+  {
+   "path": "./crates/sentry-driver/tests/signal.rs",
+   "lines": 8,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 1
   },
   {
    "path": "./crates/sentry-driver/tests/signal/sd_notify_adversarial.rs",
@@ -1712,28 +1747,35 @@
    "reach": 1
   },
   {
-   "path": "./crates/sentry-mcp/tests/flooding_stress.rs",
+   "path": "./crates/sentry-mcp/tests/integration/flooding_stress.rs",
    "lines": 144,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
   },
   {
-   "path": "./crates/sentry-mcp/tests/non_utf8_adversarial.rs",
+   "path": "./crates/sentry-mcp/tests/integration/non_utf8_adversarial.rs",
    "lines": 64,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
   },
   {
-   "path": "./crates/sentry-mcp/tests/protocol_fuzzing.rs",
+   "path": "./crates/sentry-mcp/tests/integration/protocol_fuzzing.rs",
    "lines": 204,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
   },
   {
-   "path": "./crates/sentry-mcp/tests/zero_network_listener.rs",
+   "path": "./crates/sentry-mcp/tests/integration.rs",
+   "lines": 8,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 0
+  },
+  {
+   "path": "./crates/sentry-mcp/tests/integration/zero_network_listener.rs",
    "lines": 152,
    "bin_bytes": null,
    "heat_pct": null,
@@ -1824,57 +1866,64 @@
    "reach": 0
   },
   {
-   "path": "./crates/sentry-safety/tests/adversarial_clock_skew.rs",
+   "path": "./crates/sentry-safety/tests/integration/adversarial_clock_skew.rs",
    "lines": 188,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
   },
   {
-   "path": "./crates/sentry-safety/tests/adversarial_corrupted_dropins.rs",
+   "path": "./crates/sentry-safety/tests/integration/adversarial_corrupted_dropins.rs",
    "lines": 150,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
   },
   {
-   "path": "./crates/sentry-safety/tests/adversarial_dropin_filtering.rs",
+   "path": "./crates/sentry-safety/tests/integration/adversarial_dropin_filtering.rs",
    "lines": 165,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
   },
   {
-   "path": "./crates/sentry-safety/tests/adversarial_escalation_gatekeeper.rs",
+   "path": "./crates/sentry-safety/tests/integration/adversarial_escalation_gatekeeper.rs",
    "lines": 154,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
   },
   {
-   "path": "./crates/sentry-safety/tests/adversarial_exponential_backoff.rs",
+   "path": "./crates/sentry-safety/tests/integration/adversarial_exponential_backoff.rs",
    "lines": 131,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
   },
   {
-   "path": "./crates/sentry-safety/tests/adversarial_flapping_lockout.rs",
+   "path": "./crates/sentry-safety/tests/integration/adversarial_flapping_lockout.rs",
    "lines": 186,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
   },
   {
-   "path": "./crates/sentry-safety/tests/adversarial_oversized_policy.rs",
+   "path": "./crates/sentry-safety/tests/integration/adversarial_oversized_policy.rs",
    "lines": 114,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
   },
   {
-   "path": "./crates/sentry-safety/tests/adversarial_registry_flood.rs",
+   "path": "./crates/sentry-safety/tests/integration/adversarial_registry_flood.rs",
    "lines": 158,
+   "bin_bytes": null,
+   "heat_pct": null,
+   "reach": 0
+  },
+  {
+   "path": "./crates/sentry-safety/tests/integration.rs",
+   "lines": 16,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0
@@ -1972,7 +2021,7 @@
   },
   {
    "path": "./qa/e2e/tiers/r2_integration.rs",
-   "lines": 97,
+   "lines": 98,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 0

@@ -71,7 +71,7 @@ fn test_fallback_engine_with_cgroup_memory_limit() {
         synthetic: false,
     };
 
-    let ctx = IncidentContext::new(
+    let mut ctx = IncidentContext::new(
         "worker.service",
         DriverEvent::UnitFailed(UnitFailedDetails {
             unit: "worker.service".to_string(),
@@ -81,8 +81,8 @@ fn test_fallback_engine_with_cgroup_memory_limit() {
             exec_status: None,
             main_pid: None,
         }),
-    )
-    .with_cgroup(cgroup);
+    );
+    ctx.cgroup = Some(cgroup);
 
     let payload = engine.triage(&ctx);
     assert_eq!(payload.severity, Severity::High);
