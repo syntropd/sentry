@@ -1015,7 +1015,7 @@ checksum = "94143f37725109f92c262ed2cf5e59bce7498c01bcc1502d7b9afe439a4e9f49"
 
 [[package]]
 name = "sentry-qa"
-version = "0.5.0"
+version = "0.6.0"
 dependencies = [
  "chrono",
  "serde",
@@ -1201,7 +1201,7 @@ dependencies = [
 
 [[package]]
 name = "syntrop-sentry"
-version = "0.5.0"
+version = "0.6.0"
 dependencies = [
  "chrono",
  "reqwest",
@@ -1223,7 +1223,7 @@ dependencies = [
 
 [[package]]
 name = "syntrop-sentry-core"
-version = "0.5.0"
+version = "0.6.0"
 dependencies = [
  "chrono",
  "serde",
@@ -1235,7 +1235,7 @@ dependencies = [
 
 [[package]]
 name = "syntrop-sentry-diagnostic"
-version = "0.5.0"
+version = "0.6.0"
 dependencies = [
  "async-trait",
  "chrono",
@@ -1252,7 +1252,7 @@ dependencies = [
 
 [[package]]
 name = "syntrop-sentry-driver"
-version = "0.5.0"
+version = "0.6.0"
 dependencies = [
  "chrono",
  "futures-lite",
@@ -1272,7 +1272,7 @@ dependencies = [
 
 [[package]]
 name = "syntrop-sentry-mcp"
-version = "0.5.0"
+version = "0.6.0"
 dependencies = [
  "chrono",
  "serde",
@@ -1287,7 +1287,7 @@ dependencies = [
 
 [[package]]
 name = "syntrop-sentry-safety"
-version = "0.5.0"
+version = "0.6.0"
 dependencies = [
  "chrono",
  "serde",
@@ -1301,7 +1301,7 @@ dependencies = [
 
 [[package]]
 name = "syntropd-sentry-qa-unit"
-version = "0.5.0"
+version = "0.6.0"
 dependencies = [
  "async-trait",
  "chrono",
