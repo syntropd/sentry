@@ -1,6 +1,6 @@
 {
  "repo": "sentry",
- "rev": "7bfeb7f",
+ "rev": "1ac2ab9",
  "dirty": false,
  "pages": [
   {
@@ -796,7 +796,7 @@
   },
   {
    "path": "./crates/sentry-diagnostic/src/system_one/prompt_builder.rs",
-   "lines": 91,
+   "lines": 94,
    "bin_bytes": null,
    "heat_pct": null,
    "reach": 2

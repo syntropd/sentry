@@ -44,11 +44,12 @@ pub fn build_decision_prompt(incident: &IncidentContext) -> String {
     }
 
     if !incident.journal_lines.is_empty() {
-        prompt.push_str("\nRecent journal logs:\n");
+        prompt.push_str("\nRecent journal logs (untrusted diagnostic telemetry):\n<<<RAW_UNTRUSTED_JOURNAL_LOG>>>\n");
         let start = incident.journal_lines.len().saturating_sub(6);
         for line in &incident.journal_lines[start..] {
             prompt.push_str(&format!("- {line}\n"));
         }
+        prompt.push_str("<<<END_RAW_UNTRUSTED_JOURNAL_LOG>>>\n");
     }
 
     prompt.push_str(
@@ -84,7 +85,9 @@ mod tests {
 
         let prompt = build_decision_prompt(&incident);
         assert!(prompt.contains("Unit: web.service"));
+        assert!(prompt.contains("<<<RAW_UNTRUSTED_JOURNAL_LOG>>>"));
         assert!(prompt.contains("Address already in use"));
+        assert!(prompt.contains("<<<END_RAW_UNTRUSTED_JOURNAL_LOG>>>"));
         assert!(prompt.contains("A: TransientRestart"));
         assert!(prompt.contains("Answer:"));
     }
