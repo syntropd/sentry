@@ -14,7 +14,7 @@ pub struct SystemOneClassifier {
 
 impl Default for SystemOneClassifier {
     fn default() -> Self {
-        Self::new(SystemOneClient::default(), "qwen2.5-coder-7b")
+        Self::new(SystemOneClient::default(), "clef-flash")
     }
 }
 
